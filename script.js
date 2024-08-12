@@ -1,142 +1,256 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    height: 100vh;
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const learningPlan = [
+        {
+            month: "Month 1: Python Basics",
+            weeks: [
+                {
+                    title: "Week 1: Python Basics",
+                    tasks: [
+                        {
+                            description: "Watch Python basics tutorials",
+                            link: "https://www.youtube.com/watch?v=kqtD5dpn9C8",
+                            extraLink: "https://www.codecademy.com/learn/learn-python-3",
+                            extraPoints: 20,
+                            shortDayDetails: "Complete 2 exercises, Watch for 30 minutes",
+                            longDayDetails: "Complete 4 exercises, Watch for 60 minutes",
+                            shortDayDuration: 2,
+                            longDayDuration: 4,
+                            embeddable: true
+                        },
+                        {
+                            description: "Complete exercises on W3Schools",
+                            link: "https://www.w3schools.com/python/python_exercises.asp",
+                            extraLink: "https://www.hackerrank.com/domains/tutorials/10-days-of-python",
+                            extraPoints: 20,
+                            shortDayDetails: "Finish 3 exercises, Spend 30 minutes",
+                            longDayDetails: "Finish 6 exercises, Spend 60 minutes",
+                            shortDayDuration: 3,
+                            longDayDuration: 6,
+                            embeddable: false
+                        }
+                    ]
+                },
+                // Continue for other weeks and months
+            ]
+        },
+        // Add more months and weeks as needed
+    ];
 
-.sidebar {
-    width: 200px;
-    background-color: #333;
-    color: #fff;
-    position: fixed;
-    height: 100%;
-    top: 0;
-    left: 0;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-}
+    const container = document.getElementById('learning-plan');
+    const today = new Date();
+    let points = 0;
+    let iframeContainer;
 
-.sidebar h3 {
-    margin-top: 0;
-}
+    learningPlan.forEach(month => {
+        const section = document.createElement('div');
+        section.classList.add('section');
 
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
+        const monthTitle = document.createElement('h2');
+        monthTitle.textContent = month.month;
+        section.appendChild(monthTitle);
 
-.sidebar ul li {
-    margin-bottom: 10px;
-}
+        month.weeks.forEach(week => {
+            const weekTitle = document.createElement('h3');
+            weekTitle.textContent = week.title;
+            section.appendChild(weekTitle);
 
-.sidebar ul li a {
-    color: #fff;
-    text-decoration: none;
-}
+            week.tasks.forEach(task => {
+                const taskDiv = document.createElement('div');
+                taskDiv.classList.add('task');
 
-.sidebar ul li a:hover {
-    text-decoration: underline;
-}
+                const taskDescription = document.createElement('h4');
+                taskDescription.textContent = task.description;
+                taskDiv.appendChild(taskDescription);
 
-.container {
-    flex: 1;
-    margin-left: 220px;
-    margin-right: 320px;
-    padding: 20px;
-    background-color: #fff;
-    overflow-y: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+                const taskDetails = document.createElement('p');
+                taskDetails.classList.add('task-details');
+                taskDetails.textContent = `Details: ${task.shortDayDetails}`;
+                taskDiv.appendChild(taskDetails);
 
-.container header {
-    text-align: center;
-    margin-bottom: 20px;
-}
+                const buttonGroup = document.createElement('div');
+                buttonGroup.classList.add('button-group');
 
-.notepad {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 300px;
-    height: 100%;
-    padding: 20px;
-    background-color: #f4f4f4;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-}
+                const shortDayButton = document.createElement('button');
+                shortDayButton.classList.add('short-day');
+                shortDayButton.textContent = "Short Day";
+                shortDayButton.addEventListener('click', () => {
+                    showTaskDetails(task, task.shortDayDetails, task.shortDayDuration);
+                    updateSidebarResources(task);
+                });
 
-.notepad h3 {
-    margin-top: 0;
-}
+                const longDayButton = document.createElement('button');
+                longDayButton.classList.add('long-day');
+                longDayButton.textContent = "Long Day";
+                longDayButton.addEventListener('click', () => {
+                    showTaskDetails(task, task.longDayDetails, task.longDayDuration);
+                    updateSidebarResources(task);
+                });
 
-.notepad textarea {
-    width: 100%;
-    height: 80%;
-    resize: none;
-    margin-bottom: 10px;
-}
+                buttonGroup.appendChild(shortDayButton);
+                buttonGroup.appendChild(longDayButton);
+                taskDiv.appendChild(buttonGroup);
 
-.notepad button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4285F4;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
+                const taskLink = document.createElement('a');
+                taskLink.href = task.link;
+                taskLink.target = "_blank";
+                taskLink.textContent = "Go to Resource";
+                taskLink.classList.add('resource-link');
+                taskLink.addEventListener('click', () => {
+                    updatePoints(10);
+                });
 
-.notepad button:hover {
-    background-color: #357ae8;
-}
+                const extraLink = document.createElement('a');
+                extraLink.href = task.extraLink;
+                extraLink.target = "_blank";
+                extraLink.textContent = "Try this for extra points!";
+                extraLink.classList.add('extra-link');
+                extraLink.addEventListener('click', () => {
+                    updatePoints(task.extraPoints);
+                });
 
-.console {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-}
+                taskDiv.appendChild(taskLink);
+                taskDiv.appendChild(extraLink);
 
-.console h3 {
-    margin-top: 0;
-}
+                const calendarDiv = document.createElement('div');
+                calendarDiv.classList.add('calendar');
 
-.console textarea {
-    width: 100%;
-    height: 150px;
-    margin-bottom: 10px;
-}
+                for (let i = 0; i < task.shortDayDuration; i++) {
+                    const taskDate = new Date(today);
+                    taskDate.setDate(today.getDate() + i);
 
-.console button {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
+                    const dayDiv = document.createElement('div');
+                    const isWeekend = taskDate.getDay() % 6 === 0;
+                    dayDiv.classList.add('day', isWeekend ? 'weekend' : 'weekday');
+                    dayDiv.dataset.link = task.link;
 
-.console button:hover {
-    background-color: #218838;
-}
+                    const dayLabel = document.createElement('div');
+                    dayLabel.textContent = taskDate.toDateString();
+                    dayDiv.appendChild(dayLabel);
 
-.console pre {
-    margin-top: 20px;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-}
+                    dayDiv.addEventListener('click', function(e) {
+                        if (!e.target.matches('input[type="checkbox"], button')) {
+                            if (task.embeddable) {
+                                if (!iframeContainer) {
+                                    iframeContainer = document.createElement('div');
+                                    iframeContainer.classList.add('iframe-container');
+                                    container.appendChild(iframeContainer);
+                                }
+                                iframeContainer.innerHTML = `<iframe src="${this.dataset.link}" width="100%" height="600px"></iframe>`;
+                                iframeContainer.scrollIntoView({ behavior: 'smooth' });
+                            } else {
+                                alert('This resource cannot be embedded. Please use the link to access it directly.');
+                            }
+                        }
+                    });
 
-.task-details {
-    margin-bottom: 20px;
-}
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.dataset.date = taskDate.toISOString().slice(0, 10);
+                    checkbox.checked = localStorage.getItem(checkbox.dataset.date) === 'done';
 
-.iframe-container {
-    margin-top: 30px;
-    width: 100%;
-}
+                    checkbox.addEventListener('change', function() {
+                        if (this.checked) {
+                            localStorage.setItem(this.dataset.date, 'done');
+                            dayDiv.classList.add('checked');
+                            updatePoints(isLongDay(taskDiv) ? task.longDayDuration * 20 : task.shortDayDuration * 10);
+                        } else {
+                            localStorage.removeItem(this.dataset.date);
+                            dayDiv.classList.remove('checked');
+                            updatePoints(isLongDay(taskDiv) ? -(task.longDayDuration * 20) : -(task.shortDayDuration * 10));
+                        }
+                    });
+
+                    if (checkbox.checked) {
+                        dayDiv.classList.add('checked');
+                    }
+
+                    const completeButton = document.createElement('button');
+                    completeButton.textContent = "Complete Day";
+                    completeButton.classList.add('completion-animation');
+                    completeButton.addEventListener('click', function() {
+                        checkbox.checked = true;
+                        checkbox.dispatchEvent(new Event('change'));
+                        showCompletionMessage();
+                    });
+
+                    dayDiv.appendChild(checkbox);
+                    dayDiv.appendChild(completeButton);
+                    calendarDiv.appendChild(dayDiv);
+                }
+
+                taskDiv.appendChild(calendarDiv);
+                section.appendChild(taskDiv);
+            });
+        });
+
+        container.appendChild(section);
+    });
+
+    // Update the sidebar with resource links
+    function updateSidebarResources(task) {
+        const resourceList = document.getElementById('resource-list');
+        resourceList.innerHTML = '';  // Clear the existing list
+
+        // Add main resource link
+        const mainResource = document.createElement('li');
+        mainResource.innerHTML = `<a href="${task.link}" target="_blank">Main Resource</a>`;
+        resourceList.appendChild(mainResource);
+
+        // Add extra resource link
+        const extraResource = document.createElement('li');
+        extraResource.innerHTML = `<a href="${task.extraLink}" target="_blank">Extra Resource (Extra Points)</a>`;
+        resourceList.appendChild(extraResource);
+    }
+
+    function showTaskDetails(task, details, duration) {
+        const taskDetails = document.querySelector('.task-details.selected');
+        if (taskDetails) {
+            taskDetails.classList.remove('selected');
+        }
+        const taskDiv = document.querySelector(`.task:contains(${task.description}) .task-details`);
+        taskDiv.textContent = `Details: ${details}`;
+        taskDiv.classList.add('selected');
+        taskDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function showCompletionMessage() {
+        const message = document.createElement('div');
+        message.classList.add('completion-message');
+        message.textContent = "Congratulations on completing the day!";
+        container.appendChild(message);
+        setTimeout(() => {
+            message.remove();
+        }, 3000);
+    }
+
+    function updatePoints(amount) {
+        points += amount;
+        const pointsContainer = document.getElementById('points');
+        pointsContainer.textContent = `Points: ${points}`;
+    }
+
+    function isLongDay(taskDiv) {
+        return taskDiv.querySelector('.task-details').textContent.includes("Long Day");
+    }
+
+    // Notepad functionality
+    document.getElementById('notepad-text').value = localStorage.getItem('notepad') || '';
+
+    document.getElementById('save-notes').addEventListener('click', function() {
+        const notes = document.getElementById('notepad-text').value;
+        localStorage.setItem('notepad', notes);
+        alert('Notes saved!');
+    });
+
+    // Console functionality
+    document.getElementById('run-code').addEventListener('click', function() {
+        const code = document.getElementById('code-editor').value;
+
+        try {
+            const output = eval(code);  // Simple JavaScript console
+            document.getElementById('console-output').textContent = output;
+        } catch (error) {
+            document.getElementById('console-output').textContent = error;
+        }
+    });
+});
