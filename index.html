@@ -31,20 +31,18 @@
         </div>
 
         <div class="side-notepads">
-            <div class="notepad">
+            <div class="notepad" id="notepad">
                 <h3>Notepad</h3>
                 <button class="minimize-button" onclick="toggleMinimize('notepad')">_</button>
                 <textarea id="notepad-text" placeholder="Write your notes here..."></textarea>
                 <button id="save-notes">Save Notes</button>
             </div>
-            <div class="notepad">
+            <div class="notepad" id="console">
                 <h3>Practice Console</h3>
                 <button class="minimize-button" onclick="toggleMinimize('console')">_</button>
-                <div class="console" id="console">
-                    <textarea id="code-editor" placeholder="Write your code here..."></textarea>
-                    <button id="run-code">Run Code</button>
-                    <pre id="console-output"></pre>
-                </div>
+                <textarea id="code-editor" placeholder="Write your code here..."></textarea>
+                <button id="run-code">Run Code</button>
+                <pre id="console-output"></pre>
             </div>
         </div>
     </div>
