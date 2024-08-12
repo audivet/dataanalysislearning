@@ -1,6 +1,134 @@
 document.addEventListener('DOMContentLoaded', function() {
     const learningPlan = [
-        // Your learning plan data as before
+        {
+            month: "Month 1: Python Basics",
+            weeks: [
+                {
+                    title: "Week 1: Python Basics",
+                    tasks: [
+                        {
+                            description: "Watch Python basics tutorials",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkqtD5dpn9C8&chs=180x180",
+                            link: "https://www.youtube.com/watch?v=kqtD5dpn9C8",
+                            duration: 3,
+                            details: "Complete 3 exercises, Watch for 45 minutes per day"
+                        },
+                        {
+                            description: "Complete exercises on W3Schools",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3schools.com%2Fpython%2Fpython_exercises.asp&chs=180x180",
+                            link: "https://www.w3schools.com/python/python_exercises.asp",
+                            duration: 4,
+                            details: "Finish 6 exercises, Spend 60 minutes per day"
+                        }
+                    ]
+                },
+                {
+                    title: "Week 2: Python Intermediate",
+                    tasks: [
+                        {
+                            description: "Learn about data structures",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fdocs.python.org%2F3%2Ftutorial%2Fdatastructures.html&chs=180x180",
+                            link: "https://docs.python.org/3/tutorial/datastructures.html",
+                            duration: 3,
+                            details: "Complete 2 tutorials, Spend 45 minutes"
+                        },
+                        {
+                            description: "Work on small projects",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.pythonforbeginners.com%2Fprojects%2F15-python-projects-beginners%2F&chs=180x180",
+                            link: "https://www.pythonforbeginners.com/projects/15-python-projects-beginners/",
+                            duration: 4,
+                            details: "Finish 1 project per day, Spend 60 minutes"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            month: "Month 2: Data Analysis with Python",
+            weeks: [
+                {
+                    title: "Week 3: Pandas Introduction",
+                    tasks: [
+                        {
+                            description: "Learn the basics of Pandas",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fpandas.pydata.org%2Fpandas-docs%2Fstable%2Fgetting_started%2Findex.html&chs=180x180",
+                            link: "https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html",
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
+                        },
+                        {
+                            description: "Complete Pandas exercises",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3resource.com%2Fpython-exercises%2Fpandas%2Findex.php&chs=180x180",
+                            link: "https://www.w3resource.com/python-exercises/pandas/index.php",
+                            duration: 4,
+                            details: "Finish 4 exercises, Spend 60 minutes per day"
+                        }
+                    ]
+                },
+                {
+                    title: "Week 4: Data Cleaning with Pandas",
+                    tasks: [
+                        {
+                            description: "Practice data cleaning techniques",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2Flearn%2Fpandas&chs=180x180",
+                            link: "https://www.kaggle.com/learn/pandas",
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
+                        },
+                        {
+                            description: "Work on a data cleaning project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kdnuggets.com%2F2019%2F06%2Fdata-cleaning-tutorial-python.html&chs=180x180",
+                            link: "https://www.kdnuggets.com/2019/06/data-cleaning-tutorial-python.html",
+                            duration: 4,
+                            details: "Finish 1 project, Spend 60 minutes per day"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            month: "Month 3: Data Visualization",
+            weeks: [
+                {
+                    title: "Week 5: Introduction to Matplotlib",
+                    tasks: [
+                        {
+                            description: "Learn Matplotlib basics",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fmatplotlib.org%2Fstable%2Fusers%2Fgetting_started%2F&chs=180x180",
+                            link: "https://matplotlib.org/stable/users/getting_started/",
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
+                        },
+                        {
+                            description: "Complete Matplotlib exercises",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3resource.com%2Fpython-exercises%2Fmatplotlib%2Findex.php&chs=180x180",
+                            link: "https://www.w3resource.com/python-exercises/matplotlib/index.php",
+                            duration: 4,
+                            details: "Finish 4 exercises, Spend 60 minutes per day"
+                        }
+                    ]
+                },
+                {
+                    title: "Week 6: Data Visualization with Seaborn",
+                    tasks: [
+                        {
+                            description: "Learn Seaborn basics",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fseaborn.pydata.org%2F&chs=180x180",
+                            link: "https://seaborn.pydata.org/",
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
+                        },
+                        {
+                            description: "Complete Seaborn exercises",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2Flearn%2Fdata-visualization&chs=180x180",
+                            link: "https://www.kaggle.com/learn/data-visualization",
+                            duration: 4,
+                            details: "Finish 4 exercises, Spend 60 minutes per day"
+                        }
+                    ]
+                }
+            ]
+        }
     ];
 
     const container = document.getElementById('learning-plan');
