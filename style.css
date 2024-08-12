@@ -100,36 +100,73 @@ body {
     height: 70%;
     resize: vertical;
     margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font like in VS Code */
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    border: 1px solid #333;
+    padding: 10px;
 }
 
 .notepad button {
     width: 100%;
     padding: 10px;
-    background-color: #4285F4;
+    background-color: #007acc;
     color: #fff;
     border: none;
     cursor: pointer;
 }
 
 .notepad button:hover {
-    background-color: #357ae8;
+    background-color: #005f9e;
+}
+
+.console {
+    background-color: #1e1e1e;
+    color: #dcdcdc;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+    border-radius: 8px;
+    height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.console h3 {
+    color: #dcdcdc;
+    margin-top: 0;
+}
+
+.console textarea {
+    width: 100%;
+    height: 100px;
+    background-color: #252526;
+    color: #dcdcdc;
+    border: 1px solid #333;
+    padding: 10px;
+    resize: vertical;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.console button {
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.console button:hover {
+    background-color: #005f9e;
 }
 
 .console pre {
     margin-top: 20px;
-    background-color: #333;
-    color: #fff;
+    background-color: #1e1e1e;
+    color: #dcdcdc;
     padding: 10px;
     border-radius: 8px;
     height: 200px;
     overflow-y: auto;
-}
-
-.task-details {
-    margin-bottom: 20px;
-}
-
-.iframe-container {
-    margin-top: 30px;
-    width: 100%;
+    border: 1px solid #333;
 }
