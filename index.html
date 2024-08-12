@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Data Analysis Learning Platform</title>
+    <title>Interactive Learning Platform</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="points-display">
+        Points: <span id="points">0</span>
+    </div>
 
     <div class="sidebar">
         <h3>Additional Resources</h3>
         <ul id="resource-list">
             <!-- Resource links will be dynamically added here -->
         </ul>
+    </div>
+
+    <div class="notepad" id="left-notepad">
+        <h3>Notepad</h3>
+        <textarea id="notepad-text" placeholder="Write your notes here..."></textarea>
+        <button id="save-notes">Save Notes</button>
     </div>
 
     <div class="container">
@@ -23,19 +33,13 @@
         <div id="learning-plan">
             <!-- Learning content will be dynamically generated here -->
         </div>
-
-        <div class="console">
-            <h3>Try It Yourself</h3>
-            <textarea id="code-editor" placeholder="Write your code here..."></textarea>
-            <button id="run-code">Run Code</button>
-            <pre id="console-output"></pre>
-        </div>
     </div>
 
-    <div class="notepad">
-        <h3>Notepad</h3>
-        <textarea id="notepad-text" placeholder="Write your notes here..."></textarea>
-        <button id="save-notes">Save Notes</button>
+    <div class="notepad" id="right-notepad">
+        <h3>Practice Console</h3>
+        <textarea id="code-editor" placeholder="Write your code here..."></textarea>
+        <button id="run-code">Run Code</button>
+        <pre id="console-output"></pre>
     </div>
 
     <script src="script.js"></script>
