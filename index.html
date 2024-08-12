@@ -3,25 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Page with QR Code</title>
+    <title>Interactive Data Analysis Learning Platform</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="header">
-        <button class="scroll-to-content">
-            Go to Content
-        </button>
+    <div class="sidebar">
+        <h3>Additional Resources</h3>
+        <ul id="resource-list">
+            <!-- Resource links will be dynamically added here -->
+        </ul>
     </div>
 
-    <div class="content" id="content">
-        <h1>Welcome to Our Page</h1>
-        <p>Here is the content you were looking for.</p>
+    <div class="container">
+        <header>
+            <h1>6-Month Data Analysis Learning Plan</h1>
+        </header>
 
-        <div class="qr-code-container">
-            <img src="your-qrcode-image-url.png" alt="QR Code">
-            <p>Scan this QR code to access additional content</p>
+        <div id="learning-plan">
+            <!-- Learning content will be dynamically generated here -->
         </div>
+
+        <div class="console">
+            <h3>Try It Yourself</h3>
+            <textarea id="code-editor" placeholder="Write your code here..."></textarea>
+            <button id="run-code">Run Code</button>
+            <pre id="console-output"></pre>
+        </div>
+    </div>
+
+    <div class="notepad">
+        <h3>Notepad</h3>
+        <textarea id="notepad-text" placeholder="Write your notes here..."></textarea>
+        <button id="save-notes">Save Notes</button>
     </div>
 
     <script src="script.js"></script>
