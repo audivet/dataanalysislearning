@@ -1,47 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const pointsDisplay = document.getElementById('points');
-    let points = 0;
-
-    function updatePoints(amount) {
-        points += amount;
-        pointsDisplay.textContent = points;
-    }
-
-    // Notepad functionality
-    const notepadText = document.getElementById('notepad-text');
-    notepadText.value = localStorage.getItem('notepad') || '';
-
-    document.getElementById('save-notes').addEventListener('click', function() {
-        const notes = notepadText.value;
-        localStorage.setItem('notepad', notes);
-        alert('Notes saved!');
-    });
-
-    // Console functionality
-    document.getElementById('run-code').addEventListener('click', function() {
-        const code = document.getElementById('code-editor').value;
-
-        try {
-            const output = eval(code);  // Simple JavaScript console
-            document.getElementById('console-output').textContent = output;
-        } catch (error) {
-            document.getElementById('console-output').textContent = error;
-        }
-    });
-
-    // Minimize functionality
-    window.toggleMinimize = function(elementId) {
-        const element = document.getElementById(elementId);
-        if (element.classList.contains('minimized')) {
-            element.classList.remove('minimized');
-        } else {
-            element.classList.add('minimized');
-        }
-    };
-
-    // Learning Plan Implementation
     const learningPlan = [
-        // Month 1: Python Basics
         {
             month: "Month 1: Python Basics",
             weeks: [
@@ -50,25 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Watch Python basics tutorials",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkqtD5dpn9C8&chs=180x180",
                             link: "https://www.youtube.com/watch?v=kqtD5dpn9C8",
                             shortDayDetails: "Complete 2 exercises, Watch for 30 minutes",
                             longDayDetails: "Complete 4 exercises, Watch for 60 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.w3schools.com/python/python_exercises.asp",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 10
                         },
                         {
                             description: "Complete exercises on W3Schools",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3schools.com%2Fpython%2Fpython_exercises.asp&chs=180x180",
                             link: "https://www.w3schools.com/python/python_exercises.asp",
                             shortDayDetails: "Finish 3 exercises, Spend 30 minutes",
                             longDayDetails: "Finish 6 exercises, Spend 60 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.codecademy.com/learn/learn-python-3",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 15
                         }
                     ]
                 },
@@ -77,476 +29,506 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Learn about data structures",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fdocs.python.org%2F3%2Ftutorial%2Fdatastructures.html&chs=180x180",
                             link: "https://docs.python.org/3/tutorial/datastructures.html",
                             shortDayDetails: "Complete 2 tutorials, Spend 45 minutes",
                             longDayDetails: "Complete 4 tutorials, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/intermediate-python",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 12
                         },
                         {
                             description: "Work on small projects",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.pythonforbeginners.com%2Fprojects%2F15-python-projects-beginners%2F&chs=180x180",
                             link: "https://www.pythonforbeginners.com/projects/15-python-projects-beginners/",
-                            shortDayDetails: "Complete 1 project, Spend 60 minutes",
-                            longDayDetails: "Complete 2 projects, Spend 120 minutes",
-                            shortDayDuration: 4,
-                            longDayDuration: 4,
-                            extraLink: "https://www.practicepython.org/",
-                            extraPoints: 20,
-                            embeddable: false
+                            shortDayDetails: "Finish 1 project per day, Spend 60 minutes",
+                            longDayDetails: "Finish 2 projects per day, Spend 120 minutes",
+                            extraPoints: 18
                         }
                     ]
                 },
                 {
-                    title: "Week 3: Python Advanced",
+                    title: "Week 3: Python Advanced Topics",
                     tasks: [
                         {
-                            description: "Learn about advanced Python topics",
-                            link: "https://realpython.com/",
-                            shortDayDetails: "Complete 2 advanced tutorials, Spend 45 minutes",
-                            longDayDetails: "Complete 4 advanced tutorials, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/advanced-python",
-                            extraPoints: 20,
-                            embeddable: false
+                            description: "Learn advanced Python concepts",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Frealpython.com%2Ftutorials%2Fpython%2Fadvanced%2F&chs=180x180",
+                            link: "https://realpython.com/tutorials/python/advanced/",
+                            shortDayDetails: "Complete 2 advanced topics, Spend 45 minutes",
+                            longDayDetails: "Complete 4 advanced topics, Spend 90 minutes",
+                            extraPoints: 20
                         },
                         {
-                            description: "Work on advanced projects",
-                            link: "https://www.pythonforbeginners.com/",
-                            shortDayDetails: "Complete 1 advanced project, Spend 60 minutes",
-                            longDayDetails: "Complete 2 advanced projects, Spend 120 minutes",
-                            shortDayDuration: 4,
-                            longDayDuration: 4,
-                            extraLink: "https://www.kaggle.com/learn/python",
-                            extraPoints: 20,
-                            embeddable: false
+                            description: "Practice with coding challenges",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.codewars.com%2F&chs=180x180",
+                            link: "https://www.codewars.com/",
+                            shortDayDetails: "Solve 2 challenges, Spend 60 minutes",
+                            longDayDetails: "Solve 4 challenges, Spend 120 minutes",
+                            extraPoints: 22
+                        }
+                    ]
+                },
+                {
+                    title: "Week 4: Python Final Project",
+                    tasks: [
+                        {
+                            description: "Plan your Python project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2F&chs=180x180",
+                            link: "https://www.kaggle.com/",
+                            shortDayDetails: "Plan project and outline, Spend 60 minutes",
+                            longDayDetails: "Plan project in detail, Spend 120 minutes",
+                            extraPoints: 25
+                        },
+                        {
+                            description: "Implement and test your project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2F&chs=180x180",
+                            link: "https://github.com/",
+                            shortDayDetails: "Write code and test, Spend 120 minutes",
+                            longDayDetails: "Complete project, Spend 240 minutes",
+                            extraPoints: 30
                         }
                     ]
                 }
             ]
         },
-        // Month 2: Data Analysis with Python
         {
             month: "Month 2: Data Analysis with Python",
             weeks: [
                 {
-                    title: "Week 4: Pandas Introduction",
+                    title: "Week 5: Introduction to Pandas",
                     tasks: [
                         {
-                            description: "Learn the basics of Pandas",
+                            description: "Learn Pandas basics",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fpandas.pydata.org%2Fpandas-docs%2Fstable%2Fgetting_started%2Findex.html&chs=180x180",
                             link: "https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html",
                             shortDayDetails: "Complete 2 lessons, Spend 45 minutes",
                             longDayDetails: "Complete 4 lessons, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/pandas-foundations",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 12
                         },
                         {
                             description: "Complete Pandas exercises",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3resource.com%2Fpython-exercises%2Fpandas%2Findex.php&chs=180x180",
                             link: "https://www.w3resource.com/python-exercises/pandas/index.php",
                             shortDayDetails: "Finish 4 exercises, Spend 60 minutes",
                             longDayDetails: "Finish 8 exercises, Spend 120 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.kaggle.com/learn/pandas",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 15
                         }
                     ]
                 },
                 {
-                    title: "Week 5: Data Cleaning with Pandas",
+                    title: "Week 6: Data Cleaning with Pandas",
                     tasks: [
                         {
-                            description: "Practice data cleaning techniques",
-                            link: "https://www.kaggle.com/learn/pandas",
+                            description: "Learn data cleaning techniques",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fkaggle.com%2Flearn%2Fpandas&chs=180x180",
+                            link: "https://kaggle.com/learn/pandas",
                             shortDayDetails: "Complete 2 lessons, Spend 45 minutes",
                             longDayDetails: "Complete 4 lessons, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/cleaning-data-in-python",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 14
                         },
                         {
-                            description: "Work on a data cleaning project",
-                            link: "https://www.kdnuggets.com/2019/06/data-cleaning-tutorial-python.html",
-                            shortDayDetails: "Complete 1 project, Spend 60 minutes",
-                            longDayDetails: "Complete 2 projects, Spend 120 minutes",
-                            shortDayDuration: 4,
-                            longDayDuration: 4,
-                            extraLink: "https://realpython.com/python-data-cleaning-numpy-pandas/",
-                            extraPoints: 20,
-                            embeddable: false
+                            description: "Work on data cleaning project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fkaggle.com%2F&chs=180x180",
+                            link: "https://kaggle.com/",
+                            shortDayDetails: "Start project, Spend 60 minutes",
+                            longDayDetails: "Complete project, Spend 120 minutes",
+                            extraPoints: 20
                         }
                     ]
                 },
                 {
-                    title: "Week 6: Data Manipulation with Pandas",
+                    title: "Week 7: Data Exploration with Pandas",
                     tasks: [
                         {
-                            description: "Learn data manipulation techniques",
-                            link: "https://www.kaggle.com/learn/pandas",
+                            description: "Learn data exploration techniques",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fpandas.pydata.org%2Fpandas-docs%2Fstable%2Fuser_guide%2Fexploring.html&chs=180x180",
+                            link: "https://pandas.pydata.org/pandas-docs/stable/user_guide/exploring.html",
                             shortDayDetails: "Complete 2 lessons, Spend 45 minutes",
                             longDayDetails: "Complete 4 lessons, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/manipulating-dataframes-with-pandas",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 16
                         },
                         {
-                            description: "Work on a data manipulation project",
-                            link: "https://www.kdnuggets.com/2019/06/data-cleaning-tutorial-python.html",
-                            shortDayDetails: "Complete 1 project, Spend 60 minutes",
-                            longDayDetails: "Complete 2 projects, Spend 120 minutes",
-                            shortDayDuration: 4,
-                            longDayDuration: 4,
-                            extraLink: "https://realpython.com/pandas-python-analysis/",
-                            extraPoints: 20,
-                            embeddable: false
+                            description: "Practice with Pandas datasets",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fkaggle.com%2Fdatasets&chs=180x180",
+                            link: "https://www.kaggle.com/datasets",
+                            shortDayDetails: "Analyze 1 dataset, Spend 60 minutes",
+                            longDayDetails: "Analyze 2 datasets, Spend 120 minutes",
+                            extraPoints: 18
+                        }
+                    ]
+                },
+                {
+                    title: "Week 8: Advanced Pandas Techniques",
+                    tasks: [
+                        {
+                            description: "Learn advanced Pandas techniques",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fpandas.pydata.org%2Fpandas-docs%2Fstable%2Fuser_guide%2Fadvanced.html&chs=180x180",
+                            link: "https://pandas.pydata.org/pandas-docs/stable/user_guide/advanced.html",
+                            shortDayDetails: "Complete 2 lessons, Spend 45 minutes",
+                            longDayDetails: "Complete 4 lessons, Spend 90 minutes",
+                            extraPoints: 20
+                        },
+                        {
+                            description: "Apply techniques to real-world data",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fkaggle.com%2Fcompetitions&chs=180x180",
+                            link: "https://www.kaggle.com/competitions",
+                            shortDayDetails: "Apply techniques to 1 competition, Spend 60 minutes",
+                            longDayDetails: "Apply techniques to 2 competitions, Spend 120 minutes",
+                            extraPoints: 25
                         }
                     ]
                 }
             ]
         },
-        // Month 3: Data Visualization
         {
             month: "Month 3: Data Visualization",
             weeks: [
                 {
-                    title: "Week 7: Introduction to Matplotlib",
+                    title: "Week 9: Introduction to Matplotlib",
                     tasks: [
                         {
                             description: "Learn Matplotlib basics",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fmatplotlib.org%2Fstable%2Fusers%2Fgetting_started%2F&chs=180x180",
                             link: "https://matplotlib.org/stable/users/getting_started/",
                             shortDayDetails: "Complete 2 lessons, Spend 45 minutes",
                             longDayDetails: "Complete 4 lessons, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/introduction-to-data-visualization-with-matplotlib",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 12
                         },
                         {
                             description: "Complete Matplotlib exercises",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3resource.com%2Fpython-exercises%2Fmatplotlib%2Findex.php&chs=180x180",
                             link: "https://www.w3resource.com/python-exercises/matplotlib/index.php",
                             shortDayDetails: "Finish 4 exercises, Spend 60 minutes",
                             longDayDetails: "Finish 8 exercises, Spend 120 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://realpython.com/python-matplotlib-guide/",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 15
                         }
                     ]
                 },
                 {
-                    title: "Week 8: Data Visualization with Seaborn",
+                    title: "Week 10: Data Visualization with Seaborn",
                     tasks: [
                         {
                             description: "Learn Seaborn basics",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fseaborn.pydata.org%2F&chs=180x180",
                             link: "https://seaborn.pydata.org/",
                             shortDayDetails: "Complete 2 lessons, Spend 45 minutes",
                             longDayDetails: "Complete 4 lessons, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/introduction-to-data-visualization-with-seaborn",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 14
                         },
                         {
                             description: "Complete Seaborn exercises",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2Flearn%2Fdata-visualization&chs=180x180",
                             link: "https://www.kaggle.com/learn/data-visualization",
                             shortDayDetails: "Finish 4 exercises, Spend 60 minutes",
                             longDayDetails: "Finish 8 exercises, Spend 120 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://realpython.com/python-seaborn-data-visualization/",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 18
                         }
                     ]
                 },
                 {
-                    title: "Week 9: Advanced Data Visualization",
+                    title: "Week 11: Interactive Visualizations",
                     tasks: [
                         {
-                            description: "Learn advanced visualization techniques",
-                            link: "https://www.kaggle.com/learn/data-visualization",
+                            description: "Learn interactive visualization tools",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fplotly.com%2Fpython%2F&chs=180x180",
+                            link: "https://plotly.com/python/",
                             shortDayDetails: "Complete 2 lessons, Spend 45 minutes",
                             longDayDetails: "Complete 4 lessons, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/advanced-data-visualization-with-seaborn",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 20
                         },
                         {
-                            description: "Work on a data visualization project",
-                            link: "https://www.kdnuggets.com/2021/02/beginners-guide-seaborn-python-visualization-library.html",
-                            shortDayDetails: "Complete 1 project, Spend 60 minutes",
-                            longDayDetails: "Complete 2 projects, Spend 120 minutes",
-                            shortDayDuration: 4,
-                            longDayDuration: 4,
-                            extraLink: "https://realpython.com/python-data-visualization-bokeh/",
-                            extraPoints: 20,
-                            embeddable: false
+                            description: "Create interactive visualizations",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fplotly.com%2Fpython%2F&chs=180x180",
+                            link: "https://plotly.com/python/",
+                            shortDayDetails: "Create 1 visualization, Spend 60 minutes",
+                            longDayDetails: "Create 2 visualizations, Spend 120 minutes",
+                            extraPoints: 25
+                        }
+                    ]
+                },
+                {
+                    title: "Week 12: Data Visualization Final Project",
+                    tasks: [
+                        {
+                            description: "Plan your visualization project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fkaggle.com%2F&chs=180x180",
+                            link: "https://www.kaggle.com/",
+                            shortDayDetails: "Plan project and outline, Spend 60 minutes",
+                            longDayDetails: "Plan project in detail, Spend 120 minutes",
+                            extraPoints: 25
+                        },
+                        {
+                            description: "Implement and test your visualization project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2F&chs=180x180",
+                            link: "https://github.com/",
+                            shortDayDetails: "Write code and test, Spend 120 minutes",
+                            longDayDetails: "Complete project, Spend 240 minutes",
+                            extraPoints: 30
                         }
                     ]
                 }
             ]
         },
-        // Month 4: Advanced SQL
         {
             month: "Month 4: Advanced SQL",
             weeks: [
                 {
-                    title: "Week 10: SQL Basics",
+                    title: "Week 13: SQL Basics",
                     tasks: [
                         {
                             description: "Learn SQL basics",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3schools.com%2Fsql%2F&chs=180x180",
                             link: "https://www.w3schools.com/sql/",
                             shortDayDetails: "Complete 2 lessons, Spend 45 minutes",
                             longDayDetails: "Complete 4 lessons, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/intro-to-sql-for-data-science",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 10
                         },
                         {
                             description: "Complete SQL exercises",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3schools.com%2Fsql%2Fsql_exercises.asp&chs=180x180",
                             link: "https://www.w3schools.com/sql/sql_exercises.asp",
                             shortDayDetails: "Finish 4 exercises, Spend 60 minutes",
                             longDayDetails: "Finish 8 exercises, Spend 120 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://mode.com/sql-tutorial/",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 15
                         }
                     ]
                 },
                 {
-                    title: "Week 11: Intermediate SQL",
+                    title: "Week 14: Intermediate SQL",
                     tasks: [
                         {
-                            description: "Learn intermediate SQL",
-                            link: "https://www.datacamp.com/courses/intermediate-sql",
+                            description: "Learn Intermediate SQL",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.mode.com%2Fsql-tutorial%2F&chs=180x180",
+                            link: "https://www.mode.com/sql-tutorial/",
                             shortDayDetails: "Complete 2 lessons, Spend 45 minutes",
                             longDayDetails: "Complete 4 lessons, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.mode.com/sql-tutorial/",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 12
                         },
                         {
-                            description: "Complete intermediate SQL exercises",
-                            link: "https://mode.com/sql-tutorial/",
+                            description: "Complete Intermediate SQL exercises",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.mode.com%2Fsql-tutorial%2F&chs=180x180",
+                            link: "https://www.mode.com/sql-tutorial/",
                             shortDayDetails: "Finish 4 exercises, Spend 60 minutes",
                             longDayDetails: "Finish 8 exercises, Spend 120 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/intermediate-sql",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 15
                         }
                     ]
                 },
                 {
-                    title: "Week 12: Advanced SQL",
+                    title: "Week 15: Advanced SQL Queries",
                     tasks: [
                         {
-                            description: "Learn advanced SQL",
-                            link: "https://www.datacamp.com/courses/advanced-sql",
+                            description: "Learn advanced SQL queries",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.sqlshack.com%2Fadvanced-sql-queries%2F&chs=180x180",
+                            link: "https://www.sqlshack.com/advanced-sql-queries/",
                             shortDayDetails: "Complete 2 lessons, Spend 45 minutes",
                             longDayDetails: "Complete 4 lessons, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://mode.com/sql-tutorial/",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 18
                         },
                         {
-                            description: "Work on SQL projects",
-                            link: "https://www.w3schools.com/sql/sql_exercises.asp",
-                            shortDayDetails: "Complete 1 project, Spend 60 minutes",
-                            longDayDetails: "Complete 2 projects, Spend 120 minutes",
-                            shortDayDuration: 4,
-                            longDayDuration: 4,
-                            extraLink: "https://www.kaggle.com/learn/advanced-sql",
-                            extraPoints: 20,
-                            embeddable: false
+                            description: "Practice with complex queries",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fsqlzoo.net%2Fwiki%2FSQL_Tutorial&chs=180x180",
+                            link: "https://sqlzoo.net/wiki/SQL_Tutorial",
+                            shortDayDetails: "Solve 2 complex queries, Spend 60 minutes",
+                            longDayDetails: "Solve 4 complex queries, Spend 120 minutes",
+                            extraPoints: 20
+                        }
+                    ]
+                },
+                {
+                    title: "Week 16: SQL Final Project",
+                    tasks: [
+                        {
+                            description: "Plan your SQL project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fkaggle.com%2F&chs=180x180",
+                            link: "https://www.kaggle.com/",
+                            shortDayDetails: "Plan project and outline, Spend 60 minutes",
+                            longDayDetails: "Plan project in detail, Spend 120 minutes",
+                            extraPoints: 25
+                        },
+                        {
+                            description: "Implement and test your SQL project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2F&chs=180x180",
+                            link: "https://github.com/",
+                            shortDayDetails: "Write code and test, Spend 120 minutes",
+                            longDayDetails: "Complete project, Spend 240 minutes",
+                            extraPoints: 30
                         }
                     ]
                 }
             ]
         },
-        // Month 5: Machine Learning Introduction
         {
             month: "Month 5: Machine Learning Introduction",
             weeks: [
                 {
-                    title: "Week 13: Introduction to Machine Learning",
+                    title: "Week 17: Introduction to Machine Learning",
                     tasks: [
                         {
                             description: "Watch Andrew Ng's Machine Learning course",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fmachine-learning&chs=180x180",
                             link: "https://www.coursera.org/learn/machine-learning",
-                            shortDayDetails: "Watch 1 lesson, Spend 45 minutes",
-                            longDayDetails: "Watch 2 lessons, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/intro-to-machine-learning",
-                            extraPoints: 20,
-                            embeddable: false
+                            shortDayDetails: "Watch 1 hour of video, Spend 60 minutes",
+                            longDayDetails: "Watch 2 hours of video, Spend 120 minutes",
+                            extraPoints: 20
                         },
                         {
-                            description: "Complete the Machine Learning course",
+                            description: "Continue the Machine Learning course",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fmachine-learning&chs=180x180",
                             link: "https://www.coursera.org/learn/machine-learning",
-                            shortDayDetails: "Finish 1 assignment, Spend 60 minutes",
-                            longDayDetails: "Finish 2 assignments, Spend 120 minutes",
-                            shortDayDuration: 4,
-                            longDayDuration: 4,
-                            extraLink: "https://www.kaggle.com/learn/intro-to-machine-learning",
-                            extraPoints: 20,
-                            embeddable: false
+                            shortDayDetails: "Watch 1 hour of video, Spend 60 minutes",
+                            longDayDetails: "Watch 2 hours of video, Spend 120 minutes",
+                            extraPoints: 20
                         }
                     ]
                 },
                 {
-                    title: "Week 14: Python for Machine Learning",
+                    title: "Week 18: Python for Machine Learning",
                     tasks: [
                         {
                             description: "Read Scikit-learn documentation",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fscikit-learn.org%2Fstable%2F&chs=180x180",
                             link: "https://scikit-learn.org/stable/",
-                            shortDayDetails: "Read 2 sections, Spend 45 minutes",
-                            longDayDetails: "Read 4 sections, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/supervised-learning-with-scikit-learn",
-                            extraPoints: 20,
-                            embeddable: false
+                            shortDayDetails: "Complete 2 lessons, Spend 45 minutes",
+                            longDayDetails: "Complete 4 lessons, Spend 90 minutes",
+                            extraPoints: 15
                         },
                         {
-                            description: "Complete small projects using Scikit-learn",
-                            link: "https://scikit-learn.org/stable/auto_examples/index.html",
+                            description: "Practice with Scikit-learn",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fscikit-learn.org%2Fstable%2F&chs=180x180",
+                            link: "https://scikit-learn.org/stable/",
                             shortDayDetails: "Complete 1 project, Spend 60 minutes",
                             longDayDetails: "Complete 2 projects, Spend 120 minutes",
-                            shortDayDuration: 4,
-                            longDayDuration: 4,
-                            extraLink: "https://realpython.com/python-machine-learning/",
-                            extraPoints: 20,
-                            embeddable: false
+                            extraPoints: 20
                         }
                     ]
                 },
                 {
-                    title: "Week 15: Deep Learning Basics",
+                    title: "Week 19: Introduction to Neural Networks",
                     tasks: [
                         {
-                            description: "Watch the Deep Learning Specialization",
-                            link: "https://www.coursera.org/specializations/deep-learning",
-                            shortDayDetails: "Watch 1 lesson, Spend 45 minutes",
-                            longDayDetails: "Watch 2 lessons, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/deep-learning-in-python",
-                            extraPoints: 20,
-                            embeddable: false
+                            description: "Learn Neural Network basics",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Ftowardsdatascience.com%2Fa-beginners-guide-to-neural-networks-2c5912991b9b&chs=180x180",
+                            link: "https://towardsdatascience.com/a-beginners-guide-to-neural-networks-2c5912991b9b",
+                            shortDayDetails: "Complete 2 lessons, Spend 45 minutes",
+                            longDayDetails: "Complete 4 lessons, Spend 90 minutes",
+                            extraPoints: 20
                         },
                         {
-                            description: "Complete the Deep Learning Specialization",
-                            link: "https://www.coursera.org/specializations/deep-learning",
-                            shortDayDetails: "Finish 1 assignment, Spend 60 minutes",
-                            longDayDetails: "Finish 2 assignments, Spend 120 minutes",
-                            shortDayDuration: 4,
-                            longDayDuration: 4,
-                            extraLink: "https://www.kaggle.com/learn/deep-learning",
-                            extraPoints: 20,
-                            embeddable: false
+                            description: "Practice with Neural Networks",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Ftowardsdatascience.com%2Fa-beginners-guide-to-neural-networks-2c5912991b9b&chs=180x180",
+                            link: "https://towardsdatascience.com/a-beginners-guide-to-neural-networks-2c5912991b9b",
+                            shortDayDetails: "Complete 1 project, Spend 60 minutes",
+                            longDayDetails: "Complete 2 projects, Spend 120 minutes",
+                            extraPoints: 25
+                        }
+                    ]
+                },
+                {
+                    title: "Week 20: Machine Learning Final Project",
+                    tasks: [
+                        {
+                            description: "Plan your Machine Learning project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fkaggle.com%2F&chs=180x180",
+                            link: "https://www.kaggle.com/",
+                            shortDayDetails: "Plan project and outline, Spend 60 minutes",
+                            longDayDetails: "Plan project in detail, Spend 120 minutes",
+                            extraPoints: 30
+                        },
+                        {
+                            description: "Implement and test your Machine Learning project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2F&chs=180x180",
+                            link: "https://github.com/",
+                            shortDayDetails: "Write code and test, Spend 120 minutes",
+                            longDayDetails: "Complete project, Spend 240 minutes",
+                            extraPoints: 35
                         }
                     ]
                 }
             ]
         },
-        // Month 6: Advanced Machine Learning and Deployment
         {
-            month: "Month 6: Advanced Machine Learning and Deployment",
+            month: "Month 6: Data Science Capstone Project",
             weeks: [
                 {
-                    title: "Week 16: Advanced Machine Learning",
+                    title: "Week 21: Project Planning and Research",
                     tasks: [
                         {
-                            description: "Learn advanced machine learning concepts",
-                            link: "https://www.coursera.org/learn/advanced-machine-learning",
-                            shortDayDetails: "Watch 1 lesson, Spend 45 minutes",
-                            longDayDetails: "Watch 2 lessons, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/advanced-machine-learning",
-                            extraPoints: 20,
-                            embeddable: false
+                            description: "Conduct research for your capstone project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fkaggle.com%2F&chs=180x180",
+                            link: "https://www.kaggle.com/",
+                            shortDayDetails: "Spend 2 hours on research, Spend 120 minutes",
+                            longDayDetails: "Spend 4 hours on research, Spend 240 minutes",
+                            extraPoints: 40
                         },
                         {
-                            description: "Complete advanced machine learning projects",
-                            link: "https://www.kaggle.com/learn/advanced-machine-learning",
-                            shortDayDetails: "Complete 1 project, Spend 60 minutes",
-                            longDayDetails: "Complete 2 projects, Spend 120 minutes",
-                            shortDayDuration: 4,
-                            longDayDuration: 4,
-                            extraLink: "https://realpython.com/advanced-python-machine-learning/",
-                            extraPoints: 20,
-                            embeddable: false
+                            description: "Outline your capstone project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2F&chs=180x180",
+                            link: "https://github.com/",
+                            shortDayDetails: "Create project outline, Spend 60 minutes",
+                            longDayDetails: "Create detailed project plan, Spend 120 minutes",
+                            extraPoints: 30
                         }
                     ]
                 },
                 {
-                    title: "Week 17: Model Deployment",
+                    title: "Week 22: Data Collection and Preparation",
                     tasks: [
                         {
-                            description: "Learn about model deployment",
-                            link: "https://www.coursera.org/learn/model-deployment",
-                            shortDayDetails: "Watch 1 lesson, Spend 45 minutes",
-                            longDayDetails: "Watch 2 lessons, Spend 90 minutes",
-                            shortDayDuration: 3,
-                            longDayDuration: 3,
-                            extraLink: "https://www.datacamp.com/courses/deploying-machine-learning-models",
-                            extraPoints: 20,
-                            embeddable: false
+                            description: "Collect and clean your data",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fpandas.pydata.org%2F&chs=180x180",
+                            link: "https://pandas.pydata.org/",
+                            shortDayDetails: "Spend 2 hours on data collection, Spend 120 minutes",
+                            longDayDetails: "Spend 4 hours on data collection, Spend 240 minutes",
+                            extraPoints: 45
                         },
                         {
-                            description: "Deploy machine learning models",
-                            link: "https://www.kdnuggets.com/2020/04/guide-deploying-machine-learning-models.html",
-                            shortDayDetails: "Deploy 1 model, Spend 60 minutes",
-                            longDayDetails: "Deploy 2 models, Spend 120 minutes",
-                            shortDayDuration: 4,
-                            longDayDuration: 4,
-                            extraLink: "https://realpython.com/deploying-machine-learning-models/",
-                            extraPoints: 20,
-                            embeddable: false
+                            description: "Prepare data for analysis",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fkaggle.com%2Fcompetitions&chs=180x180",
+                            link: "https://www.kaggle.com/competitions",
+                            shortDayDetails: "Spend 2 hours on data preparation, Spend 120 minutes",
+                            longDayDetails: "Spend 4 hours on data preparation, Spend 240 minutes",
+                            extraPoints: 50
                         }
                     ]
                 },
                 {
-                    title: "Week 18: Capstone Project",
+                    title: "Week 23: Data Analysis and Model Building",
                     tasks: [
                         {
-                            description: "Work on your capstone project",
-                            link: "https://www.coursera.org/learn/machine-learning-project",
-                            shortDayDetails: "Work on 1 aspect, Spend 60 minutes",
-                            longDayDetails: "Work on 2 aspects, Spend 120 minutes",
-                            shortDayDuration: 4,
-                            longDayDuration: 4,
-                            extraLink: "https://www.kaggle.com/learn/intro-to-machine-learning",
-                            extraPoints: 20,
-                            embeddable: false
+                            description: "Analyze your data",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fpandas.pydata.org%2F&chs=180x180",
+                            link: "https://pandas.pydata.org/",
+                            shortDayDetails: "Spend 2 hours on data analysis, Spend 120 minutes",
+                            longDayDetails: "Spend 4 hours on data analysis, Spend 240 minutes",
+                            extraPoints: 55
+                        },
+                        {
+                            description: "Build predictive models",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fscikit-learn.org%2Fstable%2F&chs=180x180",
+                            link: "https://scikit-learn.org/stable/",
+                            shortDayDetails: "Build 1 model, Spend 120 minutes",
+                            longDayDetails: "Build 2 models, Spend 240 minutes",
+                            extraPoints: 60
+                        }
+                    ]
+                },
+                {
+                    title: "Week 24: Finalizing and Presenting",
+                    tasks: [
+                        {
+                            description: "Finalize your capstone project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fgithub.com%2F&chs=180x180",
+                            link: "https://github.com/",
+                            shortDayDetails: "Spend 2 hours finalizing, Spend 120 minutes",
+                            longDayDetails: "Spend 4 hours finalizing, Spend 240 minutes",
+                            extraPoints: 70
+                        },
+                        {
+                            description: "Prepare your presentation",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fslides.com%2F&chs=180x180",
+                            link: "https://slides.com/",
+                            shortDayDetails: "Create presentation, Spend 120 minutes",
+                            longDayDetails: "Create detailed presentation, Spend 240 minutes",
+                            extraPoints: 75
                         }
                     ]
                 }
@@ -555,6 +537,13 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     const container = document.getElementById('learning-plan');
+    const today = new Date();
+    let iframeContainer;
+    let points = 0;
+
+    function updatePointsDisplay() {
+        document.getElementById('points-display').textContent = `Points: ${points}`;
+    }
 
     learningPlan.forEach(month => {
         const section = document.createElement('div');
@@ -582,8 +571,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 taskDiv.appendChild(taskDetails);
 
                 const qrCodeImg = document.createElement('img');
-                qrCodeImg.src = task.qrCode ? task.qrCode : "QR Code Unavailable";
-                qrCodeImg.alt = "QR Code";
+                qrCodeImg.src = task.qrCode;
+                qrCodeImg.alt = "QR Code Unavailable";
                 taskDiv.appendChild(qrCodeImg);
 
                 const taskLink = document.createElement('a');
@@ -592,35 +581,44 @@ document.addEventListener('DOMContentLoaded', function() {
                 taskLink.textContent = "Go to Resource";
                 taskDiv.appendChild(taskLink);
 
+                const calendarDiv = document.createElement('div');
+                calendarDiv.classList.add('calendar');
+
                 const shortDayButton = document.createElement('button');
                 shortDayButton.textContent = "Short Day";
+                shortDayButton.classList.add('short-day-button');
                 shortDayButton.addEventListener('click', function() {
                     taskDetails.textContent = `Details: ${task.shortDayDetails}`;
+                    points += task.extraPoints;
+                    updatePointsDisplay();
                 });
-                taskDiv.appendChild(shortDayButton);
 
                 const longDayButton = document.createElement('button');
                 longDayButton.textContent = "Long Day";
+                longDayButton.classList.add('long-day-button');
                 longDayButton.addEventListener('click', function() {
                     taskDetails.textContent = `Details: ${task.longDayDetails}`;
+                    points += task.extraPoints * 1.5;
+                    updatePointsDisplay();
                 });
+
+                taskDiv.appendChild(shortDayButton);
                 taskDiv.appendChild(longDayButton);
 
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.addEventListener('change', function() {
-                    if (this.checked) {
-                        updatePoints(task.extraPoints);
-                    } else {
-                        updatePoints(-task.extraPoints);
-                    }
-                });
-                taskDiv.appendChild(checkbox);
-
+                taskDiv.appendChild(calendarDiv);
                 section.appendChild(taskDiv);
             });
         });
 
         container.appendChild(section);
     });
+
+    // Add a disclaimer regarding ownership of resources
+    const disclaimer = document.createElement('p');
+    disclaimer.classList.add('disclaimer');
+    disclaimer.textContent = "Disclaimer: All external resources are owned by their respective creators. The links provided are for educational purposes, and all content is credited to the original authors or creators.";
+    container.appendChild(disclaimer);
+
+    // Initialize points display
+    updatePointsDisplay();
 });
