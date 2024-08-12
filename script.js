@@ -30,13 +30,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     ]
                 },
-                // Add more weeks here
+                // Continue for other weeks and months
             ]
         },
-        // Add more months here
+        // Add more months and weeks as needed
     ];
 
     const container = document.getElementById('learning-plan');
+    const pointsDisplay = document.getElementById('points');
     const today = new Date();
     let points = 0;
     let iframeContainer;
@@ -175,7 +176,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     localStorage.removeItem(this.dataset.date);
                     dayDiv.classList.remove('checked');
-                    updatePoints(-(duration * 10));
                 }
             });
 
@@ -225,7 +225,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updatePoints(amount) {
         points += amount;
-        const pointsContainer = document.getElementById('points');
-        pointsContainer.textContent = `Points: ${points}`;
+        pointsDisplay.textContent = points;
     }
+
+    // Notepad functionality
+    document.getElementById('notepad-text').value = localStorage.getItem('notepad') || '';
+
+    document.getElementById('save-notes').addEventListener('click', function() {
+        const notes = document.getElementById('notepad-text').value;
+        localStorage.setItem('notepad', notes);
+        alert('Notes saved!');
+    });
+
+    // Console functionality
+    document.getElementById('run-code').addEventListener('click', function() {
+        const code = document.getElementById('code-editor').value;
+
+        try {
+            const output = eval(code);  // Simple JavaScript console
+            document.getElementById('console-output').textContent = output;
+        } catch (error) {
+            document.getElementById('console-output').textContent = error;
+        }
+    });
 });
