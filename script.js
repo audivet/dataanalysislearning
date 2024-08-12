@@ -172,10 +172,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (this.checked) {
                     localStorage.setItem(this.dataset.date, 'done');
                     dayDiv.classList.add('checked');
-                    updatePoints(duration * 10);
+                    updatePoints(10);  // Award points when task is completed
                 } else {
                     localStorage.removeItem(this.dataset.date);
                     dayDiv.classList.remove('checked');
+                    // No negative points
                 }
             });
 
