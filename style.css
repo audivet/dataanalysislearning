@@ -4,169 +4,129 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    display: flex;
+    height: 100vh;
 }
 
-.header {
+.points-display {
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
     text-align: center;
-    margin-bottom: 20px;
+    padding: 10px 0;
+    z-index: 1000;
+    font-size: 1.5em;
 }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    height: calc(100% - 60px);
+    top: 60px;
+    left: 0;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
 }
 
-.section {
-    margin-bottom: 40px;
-}
-
-h1 {
-    font-size: 2em;
-    margin: 0;
-}
-
-h2 {
-    color: #333;
-    font-size: 1.75em;
+.sidebar h3 {
     margin-top: 0;
 }
 
-h3 {
-    color: #555;
-    font-size: 1.5em;
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
     margin-bottom: 10px;
 }
 
-h4 {
-    color: #777;
-    font-size: 1.25em;
-    margin-bottom: 5px;
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
 }
 
-.task {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    flex: 1;
+    margin-left: 220px;
+    margin-right: 320px;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container header {
+    text-align: center;
     margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
-.task-details {
-    font-size: 0.9em;
-    color: #555;
+.notepad {
+    width: 300px;
+    height: calc(100% - 60px);
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    position: fixed;
+    top: 60px;
+}
+
+#left-notepad {
+    left: 0;
+    margin-left: 220px;
+}
+
+#right-notepad {
+    right: 0;
+}
+
+.notepad h3 {
+    margin-top: 0;
+}
+
+.notepad textarea {
+    width: 100%;
+    height: 80%;
+    resize: none;
     margin-bottom: 10px;
 }
 
-.button-group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-button {
+.notepad button {
+    width: 100%;
+    padding: 10px;
     background-color: #4285F4;
     color: #fff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-button:hover {
+.notepad button:hover {
     background-color: #357ae8;
 }
 
-.resource-link {
-    margin-top: 10px;
-    color: #4285F4;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.resource-link:hover {
-    text-decoration: underline;
-}
-
-.extra-link {
-    margin-top: 5px;
-    color: #FF9800;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    transition: transform 0.3s;
-}
-
-.extra-link:hover {
-    text-decoration: underline;
-    transform: scale(1.1);
-}
-
-.calendar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.console pre {
     margin-top: 20px;
-}
-
-.day {
-    width: 100px;
-    background-color: #ddd;
+    background-color: #333;
+    color: #fff;
     padding: 10px;
     border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-.day.checked {
-    background-color: #4caf50;
-    color: #fff;
-}
-
-.day:hover {
-    background-color: #bbb;
-}
-
-.completion-animation {
-    background-color: #ff9800;
-    color: #fff;
-    margin-top: 10px;
+.task-details {
+    margin-bottom: 20px;
 }
 
 .iframe-container {
     margin-top: 30px;
     width: 100%;
-}
-
-.completion-message {
-    color: #4caf50;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 1.5em;
-}
-
-.disclaimer {
-    font-size: 0.85em;
-    color: #999;
-    margin-top: 20px;
-    text-align: center;
-}
-
-#points {
-    text-align: center;
-    font-size: 1.25em;
-    font-weight: bold;
-    color: #333;
-    margin-top: 20px;
 }
