@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     taskDetails.textContent = `Details: ${task.shortDayDetails}`;
                     shortDayButton.classList.add('selected');
                     longDayButton.classList.remove('selected');
+                    updateCalendar(task.shortDayDuration);
                 });
 
                 const longDayButton = document.createElement('button');
@@ -117,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     taskDetails.textContent = `Details: ${task.longDayDetails}`;
                     longDayButton.classList.add('selected');
                     shortDayButton.classList.remove('selected');
+                    updateCalendar(task.longDayDuration);
                 });
 
                 daySelectionDiv.appendChild(shortDayButton);
@@ -125,6 +127,95 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Default to Short Day
                 shortDayButton.click();
+
+                function updateCalendar(duration) {
+                    calendarDiv.innerHTML = ''; // Clear existing days
+                    for (let i = 0; i < duration; i++) {
+                        const taskDate = new Date(today);
+                        taskDate.setDate(today.getDate() + i);
+
+                        const dayDiv = document.createElement('div');
+                        const isWeekend = taskDate.getDay() % 6 === 0;
+                        dayDiv.classList.add('day', isWeekend ? 'weekend' : 'weekday');
+                        dayDiv.dataset.link = task.link;
+
+                        const dayLabel = document.createElement('div');
+                        dayLabel.textContent = taskDate.toDateString();
+                        dayDiv.appendChild(dayLabel);
+
+                        dayDiv.addEventListener('click', function(e) {
+                            if (!e.target.matches('input[type="checkbox"], button')) {
+                                if (!iframeContainer) {
+                                    iframeContainer = document.createElement('div');
+                                    iframeContainer.classList.add('iframe-container');
+                                    dayDiv.appendChild(iframeContainer);
+                                }
+
+                                // Try to load the content in an iframe directly below the clicked box
+                                iframeContainer.innerHTML = `<iframe src="${this.dataset.link}" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>`;
+
+                                // Handle iframe loading failure
+                                const iframe = iframeContainer.querySelector('iframe');
+                                iframe.addEventListener('load', function() {
+                                    if (iframe.contentDocument.body.innerHTML.includes("error") || iframe.contentDocument.body.innerHTML.trim() === "") {
+                                        iframeContainer.innerHTML = `<p>Oops! It seems like this content can't be embedded here. But don't worry! 😊 Click the link or scan the QR code to get there directly. You're doing great, keep it up! 🚀</p>
+                                            <p><a href="${dayDiv.dataset.link}" target="_blank">Go to ${dayDiv.dataset.link}</a></p>
+                                            <img src="${qrCodeImg.src}" alt="QR Code" />`;
+                                    }
+                                });
+
+                                // Scroll to the iframe to make it visible
+                                iframe.scrollIntoView({ behavior: "smooth", block: "start" });
+                            }
+                        });
+
+                        const checkbox = document.createElement('input');
+                        checkbox.type = 'checkbox';
+                        checkbox.dataset.date = taskDate.toISOString().slice(0, 10);
+                        checkbox.checked = localStorage.getItem(checkbox.dataset.date) === 'done';
+
+                        checkbox.addEventListener('change', function() {
+                            if (this.checked) {
+                                localStorage.setItem(this.dataset.date, 'done');
+                                dayDiv.classList.add('checked');
+
+                                // Show a fun animation and message on completion
+                                const messageDiv = document.createElement('div');
+                                messageDiv.classList.add('completion-message');
+                                messageDiv.innerHTML = `<p>🎉 Awesome job! You've completed this task. Keep up the great work! 🚀</p>`;
+                                dayDiv.appendChild(messageDiv);
+
+                                // Add a completion animation
+                                dayDiv.classList.add('completion-animation');
+
+                                // Remove the message after a few seconds
+                                setTimeout(() => {
+                                    dayDiv.removeChild(messageDiv);
+                                    dayDiv.classList.remove('completion-animation');
+                                }, 3000);
+
+                            } else {
+                                localStorage.removeItem(this.dataset.date);
+                                dayDiv.classList.remove('checked');
+                            }
+                        });
+
+                        if (checkbox.checked) {
+                            dayDiv.classList.add('checked');
+                        }
+
+                        const completeButton = document.createElement('button');
+                        completeButton.textContent = "Complete Day";
+                        completeButton.addEventListener('click', function() {
+                            checkbox.checked = true;
+                            checkbox.dispatchEvent(new Event('change'));
+                        });
+
+                        dayDiv.appendChild(checkbox);
+                        dayDiv.appendChild(completeButton);
+                        calendarDiv.appendChild(dayDiv);
+                    }
+                }
 
                 taskDiv.appendChild(calendarDiv);
                 section.appendChild(taskDiv);
