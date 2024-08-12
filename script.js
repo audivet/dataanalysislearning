@@ -187,6 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     dayLabel.textContent = taskDate.toDateString();
                     dayDiv.appendChild(dayLabel);
 
+                    // Set up click event to embed content
                     dayDiv.addEventListener('click', function(e) {
                         if (!e.target.matches('input[type="checkbox"], button')) {
                             if (!iframeContainer) {
