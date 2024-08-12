@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Watch Python basics tutorials",
-                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkqtD5dpn9C8&chs=180x180",
+                            qrCode: "https://chart.googleapis.com/chart?chs=180x180&cht=qr&chl=https://www.youtube.com/watch?v=kqtD5dpn9C8",
                             link: "https://www.youtube.com/embed/kqtD5dpn9C8",
                             shortDayDetails: "Complete 2 exercises, Watch for 30 minutes",
                             longDayDetails: "Complete 5 exercises, Watch for 60 minutes",
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         },
                         {
                             description: "Complete exercises on W3Schools",
-                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3schools.com%2Fpython%2Fpython_exercises.asp&chs=180x180",
+                            qrCode: "https://chart.googleapis.com/chart?chs=180x180&cht=qr&chl=https://www.w3schools.com/python/python_exercises.asp",
                             link: "https://www.w3schools.com/python/python_exercises.asp",
                             shortDayDetails: "Finish 3 exercises, Spend 30 minutes",
                             longDayDetails: "Finish 6 exercises, Spend 60 minutes",
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Learn about data structures",
-                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fdocs.python.org%2F3%2Ftutorial%2Fdatastructures.html&chs=180x180",
+                            qrCode: "https://chart.googleapis.com/chart?chs=180x180&cht=qr&chl=https://docs.python.org/3/tutorial/datastructures.html",
                             link: "https://docs.python.org/3/tutorial/datastructures.html",
                             shortDayDetails: "Complete 1 tutorial, Spend 30 minutes",
                             longDayDetails: "Complete 2 tutorials, Spend 60 minutes",
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         },
                         {
                             description: "Work on small projects",
-                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.pythonforbeginners.com%2Fprojects%2F15-python-projects-beginners%2F&chs=180x180",
+                            qrCode: "https://chart.googleapis.com/chart?chs=180x180&cht=qr&chl=https://www.pythonforbeginners.com/projects/15-python-projects-beginners/",
                             link: "https://www.pythonforbeginners.com/projects/15-python-projects-beginners/",
                             shortDayDetails: "Finish 1 project, Spend 30 minutes",
                             longDayDetails: "Finish 2 projects, Spend 60 minutes",
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 taskDiv.appendChild(taskDetails);
 
                 const qrCodeImg = new Image();
-                qrCodeImg.src = decodeURIComponent(task.qrCode);
+                qrCodeImg.src = task.qrCode;
                 qrCodeImg.alt = "QR Code";
                 qrCodeImg.onerror = function() {
                     qrCodeImg.alt = "QR Code Unavailable";
@@ -155,13 +155,13 @@ document.addEventListener('DOMContentLoaded', function() {
                                     dayDiv.appendChild(iframeContainer);
                                 }
 
-                                // Try to load the content in an iframe directly below the clicked box
+                                // Handle iframe loading
                                 iframeContainer.innerHTML = `<iframe src="${this.dataset.link}" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>`;
 
-                                // Handle iframe loading failure
+                                // Check for iframe loading failure
                                 const iframe = iframeContainer.querySelector('iframe');
                                 iframe.addEventListener('load', function() {
-                                    if (iframe.contentDocument.body.innerHTML.includes("error") || iframe.contentDocument.body.innerHTML.trim() === "") {
+                                    if (!iframe.contentDocument || iframe.contentDocument.body.innerHTML.trim() === "") {
                                         iframeContainer.innerHTML = `<p>Oops! It seems like this content can't be embedded here. But don't worry! 😊 Click the link or scan the QR code to get there directly. You're doing great, keep it up! 🚀</p>
                                             <p><a href="${dayDiv.dataset.link}" target="_blank">Go to ${dayDiv.dataset.link}</a></p>
                                             <img src="${qrCodeImg.src}" alt="QR Code" />`;
