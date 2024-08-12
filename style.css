@@ -1,18 +1,158 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Analyst Learning Plan</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
-</head>
-<body>
-    <div class="container">
-        <header class="header">
-            <h1>Data Analyst Learning Plan</h1>
-        </header>
-        <div id="learning-plan"></div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+/* Style for the overall body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container to wrap the main content */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the header section */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Heading styles */
+h1, h2, h3, h4 {
+    color: #333;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+h3 {
+    background-color: #17a2b8;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+h4 {
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+/* Style for each task section */
+.task {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+/* Styling for QR code images */
+.task img {
+    display: block;
+    margin-bottom: 10px;
+    max-width: 180px;
+    height: auto;
+}
+
+/* Style for links */
+.task a {
+    display: inline-block;
+    color: #007BFF;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.task a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the calendar area */
+.calendar {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Style for individual days in the calendar */
+.day {
+    padding: 10px;
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    position: relative;
+}
+
+.day.weekend {
+    background: #e9ecef;
+}
+
+/* Style for checked/complete days */
+.day.checked {
+    background: #28a745;
+    color: #fff;
+    border-color: #28a745;
+}
+
+.day:hover {
+    background: #e2e6ea;
+}
+
+/* Positioning the checkbox within the day box */
+.day input[type="checkbox"] {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* Style for buttons */
+button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for the iframe container */
+.iframe-container {
+    margin-top: 20px;
+}
+
+/* Style for the disclaimer */
+.disclaimer {
+    font-size: 0.9em;
+    margin-top: 30px;
+    text-align: center;
+    color: #888;
+}
