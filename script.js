@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             longDayDetails: "Complete 5 exercises, Watch for 60 minutes",
                             shortDayDuration: 2,
                             longDayDuration: 5,
+                            embeddable: true // YouTube is embeddable
                         },
                         {
                             description: "Complete exercises on W3Schools",
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             longDayDetails: "Finish 6 exercises, Spend 60 minutes",
                             shortDayDuration: 3,
                             longDayDuration: 6,
+                            embeddable: false // W3Schools does not allow embedding
                         }
                     ]
                 },
@@ -37,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             longDayDetails: "Complete 2 tutorials, Spend 60 minutes",
                             shortDayDuration: 1,
                             longDayDuration: 2,
+                            embeddable: true // Documentation should be embeddable
                         },
                         {
                             description: "Work on small projects",
@@ -46,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             longDayDetails: "Finish 2 projects, Spend 60 minutes",
                             shortDayDuration: 1,
                             longDayDuration: 2,
+                            embeddable: true // Should be embeddable
                         }
                     ]
                 }
@@ -155,21 +159,18 @@ document.addEventListener('DOMContentLoaded', function() {
                                     dayDiv.appendChild(iframeContainer);
                                 }
 
-                                // Handle iframe loading
-                                iframeContainer.innerHTML = `<iframe src="${this.dataset.link}" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>`;
-
-                                // Check for iframe loading failure
-                                const iframe = iframeContainer.querySelector('iframe');
-                                iframe.addEventListener('load', function() {
-                                    if (!iframe.contentDocument || iframe.contentDocument.body.innerHTML.trim() === "") {
-                                        iframeContainer.innerHTML = `<p>Oops! It seems like this content can't be embedded here. But don't worry! 😊 Click the link or scan the QR code to get there directly. You're doing great, keep it up! 🚀</p>
+                                if (task.embeddable) {
+                                    // Handle iframe loading for embeddable content
+                                    iframeContainer.innerHTML = `<iframe src="${this.dataset.link}" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>`;
+                                } else {
+                                    // Handle non-embeddable content
+                                    iframeContainer.innerHTML = `<p>Oops! It seems like this content can't be embedded here. But don't worry! 😊 Click the link or scan the QR code to get there directly. You're doing great, keep it up! 🚀</p>
                                             <p><a href="${dayDiv.dataset.link}" target="_blank">Go to ${dayDiv.dataset.link}</a></p>
                                             <img src="${qrCodeImg.src}" alt="QR Code" />`;
-                                    }
-                                });
+                                }
 
-                                // Scroll to the iframe to make it visible
-                                iframe.scrollIntoView({ behavior: "smooth", block: "start" });
+                                // Scroll to the iframe or message to make it visible
+                                iframeContainer.scrollIntoView({ behavior: "smooth", block: "start" });
                             }
                         });
 
