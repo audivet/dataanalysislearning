@@ -10,13 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Watch Python basics tutorials",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkqtD5dpn9C8&chs=180x180",
                             link: "https://www.youtube.com/watch?v=kqtD5dpn9C8",
-                            duration: 3
+                            duration: 3,
+                            details: "Complete 3 exercises, Watch for 45 minutes per day"
                         },
                         {
                             description: "Complete exercises on W3Schools",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3schools.com%2Fpython%2Fpython_exercises.asp&chs=180x180",
                             link: "https://www.w3schools.com/python/python_exercises.asp",
-                            duration: 4
+                            duration: 4,
+                            details: "Finish 10 exercises, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -27,13 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Learn about data structures",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fdocs.python.org%2F3%2Ftutorial%2Fdatastructures.html&chs=180x180",
                             link: "https://docs.python.org/3/tutorial/datastructures.html",
-                            duration: 3
+                            duration: 3,
+                            details: "Read for 45 minutes per day"
                         },
                         {
                             description: "Work on small projects",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.pythonforbeginners.com%2Fprojects%2F15-python-projects-beginners%2F&chs=180x180",
                             link: "https://www.pythonforbeginners.com/projects/15-python-projects-beginners",
-                            duration: 4
+                            duration: 4,
+                            details: "Complete 1 project per day, Spend 60 minutes"
                         }
                     ]
                 }
@@ -49,13 +53,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Learn the basics of Pandas",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fpandas.pydata.org%2Fpandas-docs%2Fstable%2Fgetting_started%2Findex.html&chs=180x180",
                             link: "https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html",
-                            duration: 3
+                            duration: 3,
+                            details: "Complete 2 exercises, Spend 45 minutes"
                         },
                         {
                             description: "Complete Pandas exercises",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3resource.com%2Fpython-exercises%2Fpandas%2Findex.php&chs=180x180",
                             link: "https://www.w3resource.com/python-exercises/pandas/index.php",
-                            duration: 4
+                            duration: 4,
+                            details: "Finish 5 exercises, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -66,13 +72,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Practice data cleaning techniques",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2Flearn%2Fpandas&chs=180x180",
                             link: "https://www.kaggle.com/learn/pandas",
-                            duration: 3
+                            duration: 3,
+                            details: "Work on 3 datasets, Spend 45 minutes per day"
                         },
                         {
                             description: "Work on a data cleaning project",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kdnuggets.com%2F2019%2F06%2Fdata-cleaning-tutorial-python.html&chs=180x180",
                             link: "https://www.kdnuggets.com/2019/06/data-cleaning-tutorial-python.html",
-                            duration: 4
+                            duration: 4,
+                            details: "Complete 1 project, Spend 60 minutes per day"
                         }
                     ]
                 }
@@ -88,13 +96,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Learn Matplotlib basics",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fmatplotlib.org%2Fstable%2Fusers%2Fgetting_started%2F&chs=180x180",
                             link: "https://matplotlib.org/stable/users/getting_started/",
-                            duration: 3
+                            duration: 3,
+                            details: "Complete 3 tutorials, Spend 45 minutes"
                         },
                         {
                             description: "Complete Matplotlib exercises",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3resource.com%2Fpython-exercises%2Fmatplotlib%2Findex.php&chs=180x180",
                             link: "https://www.w3resource.com/python-exercises/matplotlib/index.php",
-                            duration: 4
+                            duration: 4,
+                            details: "Finish 5 exercises, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -105,13 +115,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Learn Seaborn basics",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fseaborn.pydata.org%2F&chs=180x180",
                             link: "https://seaborn.pydata.org/",
-                            duration: 3
+                            duration: 3,
+                            details: "Complete 2 tutorials, Spend 45 minutes"
                         },
                         {
                             description: "Complete Seaborn exercises",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2Flearn%2Fdata-visualization&chs=180x180",
                             link: "https://www.kaggle.com/learn/data-visualization",
-                            duration: 4
+                            duration: 4,
+                            details: "Finish 5 exercises, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -122,13 +134,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Learn advanced visualization techniques",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2Flearn%2Fdata-visualization&chs=180x180",
                             link: "https://www.kaggle.com/learn/data-visualization",
-                            duration: 3
+                            duration: 3,
+                            details: "Complete 3 tutorials, Spend 45 minutes"
                         },
                         {
                             description: "Practice advanced visualization techniques",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2Flearn%2Fdata-visualization&chs=180x180",
                             link: "https://www.kaggle.com/learn/data-visualization",
-                            duration: 4
+                            duration: 4,
+                            details: "Finish 4 exercises, Spend 60 minutes per day"
                         }
                     ]
                 }
@@ -144,13 +158,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Learn SQL basics",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3schools.com%2Fsql%2F&chs=180x180",
                             link: "https://www.w3schools.com/sql/",
-                            duration: 3
+                            duration: 3,
+                            details: "Complete 2 tutorials, Spend 45 minutes"
                         },
                         {
                             description: "Complete SQL exercises",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3schools.com%2Fsql%2Fsql_exercises.asp&chs=180x180",
                             link: "https://www.w3schools.com/sql/sql_exercises.asp",
-                            duration: 4
+                            duration: 4,
+                            details: "Finish 10 exercises, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -161,13 +177,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Learn intermediate SQL",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.mode.com%2Fsql-tutorial%2F&chs=180x180",
                             link: "https://www.mode.com/sql-tutorial/",
-                            duration: 3
+                            duration: 3,
+                            details: "Complete 2 tutorials, Spend 45 minutes"
                         },
                         {
                             description: "Complete intermediate SQL exercises",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.mode.com%2Fsql-tutorial%2F&chs=180x180",
                             link: "https://www.mode.com/sql-tutorial/",
-                            duration: 4
+                            duration: 4,
+                            details: "Finish 8 exercises, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -178,13 +196,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Learn advanced SQL",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.mode.com%2Fsql-tutorial%2F&chs=180x180",
                             link: "https://www.mode.com/sql-tutorial/",
-                            duration: 3
+                            duration: 3,
+                            details: "Complete 2 tutorials, Spend 45 minutes"
                         },
                         {
                             description: "Complete advanced SQL exercises",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.mode.com%2Fsql-tutorial%2F&chs=180x180",
                             link: "https://www.mode.com/sql-tutorial/",
-                            duration: 4
+                            duration: 4,
+                            details: "Finish 6 exercises, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -195,13 +215,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Learn SQL joins and subqueries",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3schools.com%2Fsql%2Fsql_join.asp&chs=180x180",
                             link: "https://www.w3schools.com/sql/sql_join.asp",
-                            duration: 3
+                            duration: 3,
+                            details: "Complete 2 tutorials, Spend 45 minutes"
                         },
                         {
                             description: "Practice SQL joins and subqueries",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3schools.com%2Fsql%2Fsql_join.asp&chs=180x180",
                             link: "https://www.w3schools.com/sql/sql_join.asp",
-                            duration: 4
+                            duration: 4,
+                            details: "Finish 6 exercises, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -212,13 +234,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Practice SQL with real data",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2Fdatasets&chs=180x180",
                             link: "https://www.kaggle.com/datasets",
-                            duration: 3
+                            duration: 3,
+                            details: "Complete 1 project, Spend 45 minutes per day"
                         },
                         {
                             description: "Complete a SQL project",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2Fdatasets&chs=180x180",
                             link: "https://www.kaggle.com/datasets",
-                            duration: 4
+                            duration: 4,
+                            details: "Finish 1 project, Spend 60 minutes per day"
                         }
                     ]
                 }
@@ -234,13 +258,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Watch Andrew Ng's Machine Learning course",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fmachine-learning&chs=180x180",
                             link: "https://www.coursera.org/learn/machine-learning",
-                            duration: 3
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
                         },
                         {
                             description: "Continue the Machine Learning course",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fmachine-learning&chs=180x180",
                             link: "https://www.coursera.org/learn/machine-learning",
-                            duration: 4
+                            duration: 4,
+                            details: "Finish 3 lessons, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -251,13 +277,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Read Scikit-learn documentation",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fscikit-learn.org%2Fstable%2F&chs=180x180",
                             link: "https://scikit-learn.org/stable/",
-                            duration: 3
+                            duration: 3,
+                            details: "Read for 45 minutes per day"
                         },
                         {
                             description: "Complete small projects using Scikit-learn",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fscikit-learn.org%2Fstable%2Fauto_examples%2Findex.html&chs=180x180",
                             link: "https://scikit-learn.org/stable/auto_examples/index.html",
-                            duration: 4
+                            duration: 4,
+                            details: "Finish 1 project per day, Spend 60 minutes"
                         }
                     ]
                 },
@@ -268,13 +296,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Watch the Deep Learning Specialization",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.coursera.org%2Fspecializations%2Fdeep-learning&chs=180x180",
                             link: "https://www.coursera.org/specializations/deep-learning",
-                            duration: 3
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
                         },
                         {
                             description: "Continue the Deep Learning Specialization",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.coursera.org%2Fspecializations%2Fdeep-learning&chs=180x180",
                             link: "https://www.coursera.org/specializations/deep-learning",
-                            duration: 4
+                            duration: 4,
+                            details: "Finish 3 lessons, Spend 60 minutes per day"
                         }
                     ]
                 }
@@ -290,13 +320,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Choose a project topic and plan the steps",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2Fdatasets&chs=180x180",
                             link: "https://www.kaggle.com/datasets",
-                            duration: 3
+                            duration: 3,
+                            details: "Spend 45 minutes per day"
                         },
                         {
                             description: "Gather and prepare the dataset",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kdnuggets.com%2F2019%2F06%2Fdata-cleaning-tutorial-python.html&chs=180x180",
                             link: "https://www.kdnuggets.com/2019/06/data-cleaning-tutorial-python.html",
-                            duration: 4
+                            duration: 4,
+                            details: "Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -307,13 +339,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Implement the analysis or model",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2Flearn%2Fdata-visualization&chs=180x180",
                             link: "https://www.kaggle.com/learn/data-visualization",
-                            duration: 3
+                            duration: 3,
+                            details: "Spend 45 minutes per day"
                         },
                         {
                             description: "Continue the analysis or model building",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fmachinelearningmastery.com%2Fhow-to-evaluate-machine-learning-models%2F&chs=180x180",
                             link: "https://machinelearningmastery.com/how-to-evaluate-machine-learning-models/",
-                            duration: 4
+                            duration: 4,
+                            details: "Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -324,13 +358,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Finalize the project",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.dataquest.io%2Fblog%2Fdata-science-portfolio%2F&chs=180x180",
                             link: "https://www.dataquest.io/blog/data-science-portfolio/",
-                            duration: 3
+                            duration: 3,
+                            details: "Spend 45 minutes per day"
                         },
                         {
                             description: "Present the project",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.dataquest.io%2Fblog%2Fdata-science-portfolio%2F&chs=180x180",
                             link: "https://www.dataquest.io/blog/data-science-portfolio/",
-                            duration: 4
+                            duration: 4,
+                            details: "Spend 60 minutes per day"
                         }
                     ]
                 }
@@ -362,6 +398,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 taskDescription.textContent = task.description;
                 taskDiv.appendChild(taskDescription);
 
+                const taskDetails = document.createElement('p');
+                taskDetails.textContent = `Details: ${task.details}`;
+                taskDiv.appendChild(taskDetails);
+
                 const qrCodeImg = document.createElement('img');
                 qrCodeImg.src = task.qrCode;
                 qrCodeImg.alt = "QR Code";
@@ -383,10 +423,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     const dayDiv = document.createElement('div');
                     const isWeekend = taskDate.getDay() % 6 === 0;
                     dayDiv.classList.add('day', isWeekend ? 'weekend' : 'weekday');
+                    dayDiv.dataset.link = task.link;
 
                     const dayLabel = document.createElement('div');
                     dayLabel.textContent = taskDate.toDateString();
                     dayDiv.appendChild(dayLabel);
+
+                    dayDiv.addEventListener('click', function(e) {
+                        if (!e.target.matches('input[type="checkbox"], button')) {
+                            window.open(this.dataset.link, '_blank');
+                        }
+                    });
 
                     const checkbox = document.createElement('input');
                     checkbox.type = 'checkbox';
@@ -407,7 +454,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         dayDiv.classList.add('checked');
                     }
 
+                    const completeButton = document.createElement('button');
+                    completeButton.textContent = "Complete Day";
+                    completeButton.addEventListener('click', function() {
+                        checkbox.checked = true;
+                        checkbox.dispatchEvent(new Event('change'));
+                    });
+
                     dayDiv.appendChild(checkbox);
+                    dayDiv.appendChild(completeButton);
                     calendarDiv.appendChild(dayDiv);
                 }
 
