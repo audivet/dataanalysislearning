@@ -10,15 +10,19 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Watch Python basics tutorials",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkqtD5dpn9C8&chs=180x180",
                             link: "https://www.youtube.com/embed/kqtD5dpn9C8",
-                            duration: 3,
-                            details: "Complete 3 exercises, Watch for 45 minutes per day"
+                            shortDayDetails: "Complete 2 exercises, Watch for 30 minutes",
+                            longDayDetails: "Complete 5 exercises, Watch for 60 minutes",
+                            shortDayDuration: 2,
+                            longDayDuration: 5,
                         },
                         {
                             description: "Complete exercises on W3Schools",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3schools.com%2Fpython%2Fpython_exercises.asp&chs=180x180",
                             link: "https://www.w3schools.com/python/python_exercises.asp",
-                            duration: 4,
-                            details: "Finish 6 exercises, Spend 60 minutes per day"
+                            shortDayDetails: "Finish 3 exercises, Spend 30 minutes",
+                            longDayDetails: "Finish 6 exercises, Spend 60 minutes",
+                            shortDayDuration: 3,
+                            longDayDuration: 6,
                         }
                     ]
                 },
@@ -29,101 +33,19 @@ document.addEventListener('DOMContentLoaded', function() {
                             description: "Learn about data structures",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fdocs.python.org%2F3%2Ftutorial%2Fdatastructures.html&chs=180x180",
                             link: "https://docs.python.org/3/tutorial/datastructures.html",
-                            duration: 3,
-                            details: "Complete 2 tutorials, Spend 45 minutes"
+                            shortDayDetails: "Complete 1 tutorial, Spend 30 minutes",
+                            longDayDetails: "Complete 2 tutorials, Spend 60 minutes",
+                            shortDayDuration: 1,
+                            longDayDuration: 2,
                         },
                         {
                             description: "Work on small projects",
                             qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.pythonforbeginners.com%2Fprojects%2F15-python-projects-beginners%2F&chs=180x180",
                             link: "https://www.pythonforbeginners.com/projects/15-python-projects-beginners/",
-                            duration: 4,
-                            details: "Finish 1 project per day, Spend 60 minutes"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            month: "Month 2: Data Analysis with Python",
-            weeks: [
-                {
-                    title: "Week 3: Pandas Introduction",
-                    tasks: [
-                        {
-                            description: "Learn the basics of Pandas",
-                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fpandas.pydata.org%2Fpandas-docs%2Fstable%2Fgetting_started%2Findex.html&chs=180x180",
-                            link: "https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html",
-                            duration: 3,
-                            details: "Complete 2 lessons, Spend 45 minutes"
-                        },
-                        {
-                            description: "Complete Pandas exercises",
-                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3resource.com%2Fpython-exercises%2Fpandas%2Findex.php&chs=180x180",
-                            link: "https://www.w3resource.com/python-exercises/pandas/index.php",
-                            duration: 4,
-                            details: "Finish 4 exercises, Spend 60 minutes per day"
-                        }
-                    ]
-                },
-                {
-                    title: "Week 4: Data Cleaning with Pandas",
-                    tasks: [
-                        {
-                            description: "Practice data cleaning techniques",
-                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2Flearn%2Fpandas&chs=180x180",
-                            link: "https://www.kaggle.com/learn/pandas",
-                            duration: 3,
-                            details: "Complete 2 lessons, Spend 45 minutes"
-                        },
-                        {
-                            description: "Work on a data cleaning project",
-                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kdnuggets.com%2F2019%2F06%2Fdata-cleaning-tutorial-python.html&chs=180x180",
-                            link: "https://www.kdnuggets.com/2019/06/data-cleaning-tutorial-python.html",
-                            duration: 4,
-                            details: "Finish 1 project, Spend 60 minutes per day"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            month: "Month 3: Data Visualization",
-            weeks: [
-                {
-                    title: "Week 5: Introduction to Matplotlib",
-                    tasks: [
-                        {
-                            description: "Learn Matplotlib basics",
-                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fmatplotlib.org%2Fstable%2Fusers%2Fgetting_started%2F&chs=180x180",
-                            link: "https://matplotlib.org/stable/users/getting_started/",
-                            duration: 3,
-                            details: "Complete 2 lessons, Spend 45 minutes"
-                        },
-                        {
-                            description: "Complete Matplotlib exercises",
-                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.w3resource.com%2Fpython-exercises%2Fmatplotlib%2Findex.php&chs=180x180",
-                            link: "https://www.w3resource.com/python-exercises/matplotlib/index.php",
-                            duration: 4,
-                            details: "Finish 4 exercises, Spend 60 minutes per day"
-                        }
-                    ]
-                },
-                {
-                    title: "Week 6: Data Visualization with Seaborn",
-                    tasks: [
-                        {
-                            description: "Learn Seaborn basics",
-                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fseaborn.pydata.org%2F&chs=180x180",
-                            link: "https://seaborn.pydata.org/",
-                            duration: 3,
-                            details: "Complete 2 lessons, Spend 45 minutes"
-                        },
-                        {
-                            description: "Complete Seaborn exercises",
-                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fwww.kaggle.com%2Flearn%2Fdata-visualization&chs=180x180",
-                            link: "https://www.kaggle.com/learn/data-visualization",
-                            duration: 4,
-                            details: "Finish 4 exercises, Spend 60 minutes per day"
+                            shortDayDetails: "Finish 1 project, Spend 30 minutes",
+                            longDayDetails: "Finish 2 projects, Spend 60 minutes",
+                            shortDayDuration: 1,
+                            longDayDuration: 2,
                         }
                     ]
                 }
@@ -157,7 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 taskDiv.appendChild(taskDescription);
 
                 const taskDetails = document.createElement('p');
-                taskDetails.textContent = `Details: ${task.details}`;
+                taskDetails.classList.add('task-details');
+                taskDetails.textContent = `Details: ${task.shortDayDetails}`;
                 taskDiv.appendChild(taskDetails);
 
                 const qrCodeImg = document.createElement('img');
@@ -174,7 +97,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 const calendarDiv = document.createElement('div');
                 calendarDiv.classList.add('calendar');
 
-                for (let i = 0; i < task.duration; i++) {
+                // Day Selection Buttons
+                const daySelectionDiv = document.createElement('div');
+                daySelectionDiv.classList.add('day-selection');
+
+                const shortDayButton = document.createElement('button');
+                shortDayButton.textContent = "Short Day";
+                shortDayButton.classList.add('short-day');
+                shortDayButton.addEventListener('click', function() {
+                    taskDetails.textContent = `Details: ${task.shortDayDetails}`;
+                    dayDiv.dataset.duration = task.shortDayDuration;
+                    shortDayButton.classList.add('selected');
+                    longDayButton.classList.remove('selected');
+                });
+
+                const longDayButton = document.createElement('button');
+                longDayButton.textContent = "Long Day";
+                longDayButton.classList.add('long-day');
+                longDayButton.addEventListener('click', function() {
+                    taskDetails.textContent = `Details: ${task.longDayDetails}`;
+                    dayDiv.dataset.duration = task.longDayDuration;
+                    longDayButton.classList.add('selected');
+                    shortDayButton.classList.remove('selected');
+                });
+
+                daySelectionDiv.appendChild(shortDayButton);
+                daySelectionDiv.appendChild(longDayButton);
+                taskDiv.appendChild(daySelectionDiv);
+
+                // Default to Short Day
+                shortDayButton.click();
+
+                for (let i = 0; i < task.shortDayDuration; i++) {
                     const taskDate = new Date(today);
                     taskDate.setDate(today.getDate() + i);
 
@@ -182,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     const isWeekend = taskDate.getDay() % 6 === 0;
                     dayDiv.classList.add('day', isWeekend ? 'weekend' : 'weekday');
                     dayDiv.dataset.link = task.link;
+                    dayDiv.dataset.duration = task.shortDayDuration;
 
                     const dayLabel = document.createElement('div');
                     dayLabel.textContent = taskDate.toDateString();
@@ -192,22 +147,24 @@ document.addEventListener('DOMContentLoaded', function() {
                             if (!iframeContainer) {
                                 iframeContainer = document.createElement('div');
                                 iframeContainer.classList.add('iframe-container');
-                                container.appendChild(iframeContainer);
+                                dayDiv.appendChild(iframeContainer);
                             }
 
-                            // Try to load the content in an iframe
+                            // Try to load the content in an iframe directly below the clicked box
                             iframeContainer.innerHTML = `<iframe src="${this.dataset.link}" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>`;
 
                             // Handle iframe loading failure
                             const iframe = iframeContainer.querySelector('iframe');
                             iframe.addEventListener('load', function() {
-                                const frameDoc = iframe.contentDocument || iframe.contentWindow.document;
-                                if (frameDoc.body.innerHTML.includes("error") || frameDoc.body.innerHTML.trim() === "") {
-                                    iframeContainer.innerHTML = `<p>Embedding failed. Please use the following link or QR code to access the content:</p>
-                                        <p><a href="${dayDiv.dataset.link}" target="_blank">${dayDiv.dataset.link}</a></p>
+                                if (iframe.contentDocument.body.innerHTML.includes("error") || iframe.contentDocument.body.innerHTML.trim() === "") {
+                                    iframeContainer.innerHTML = `<p>Oops! It seems like this content can't be embedded here. But don't worry! 😊 Click the link or scan the QR code to get there directly. You're doing great, keep it up! 🚀</p>
+                                        <p><a href="${dayDiv.dataset.link}" target="_blank">Go to ${dayDiv.dataset.link}</a></p>
                                         <img src="${qrCodeImg.src}" alt="QR Code" />`;
                                 }
                             });
+
+                            // Scroll to the iframe to make it visible
+                            iframe.scrollIntoView({ behavior: "smooth", block: "start" });
                         }
                     });
 
@@ -220,6 +177,22 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (this.checked) {
                             localStorage.setItem(this.dataset.date, 'done');
                             dayDiv.classList.add('checked');
+
+                            // Show a fun animation and message on completion
+                            const messageDiv = document.createElement('div');
+                            messageDiv.classList.add('completion-message');
+                            messageDiv.innerHTML = `<p>🎉 Awesome job! You've completed this task. Keep up the great work! 🚀</p>`;
+                            dayDiv.appendChild(messageDiv);
+
+                            // Add a completion animation
+                            dayDiv.classList.add('completion-animation');
+
+                            // Remove the message after a few seconds
+                            setTimeout(() => {
+                                dayDiv.removeChild(messageDiv);
+                                dayDiv.classList.remove('completion-animation');
+                            }, 3000);
+
                         } else {
                             localStorage.removeItem(this.dataset.date);
                             dayDiv.classList.remove('checked');
