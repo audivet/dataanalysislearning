@@ -83,9 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 taskDetails.textContent = `Details: ${task.shortDayDetails}`;
                 taskDiv.appendChild(taskDetails);
 
-                const qrCodeImg = document.createElement('img');
-                qrCodeImg.src = task.qrCode;
+                const qrCodeImg = new Image();
+                qrCodeImg.src = decodeURIComponent(task.qrCode);
                 qrCodeImg.alt = "QR Code";
+                qrCodeImg.onerror = function() {
+                    qrCodeImg.alt = "QR Code Unavailable";
+                    qrCodeImg.src = "";  // Fallback if the QR code cannot be loaded
+                };
                 taskDiv.appendChild(qrCodeImg);
 
                 const taskLink = document.createElement('a');
