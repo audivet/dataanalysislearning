@@ -1,160 +1,85 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.header {
     background-color: #f0f0f0;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #222;
-    color: white;
-    padding: 10px 20px;
     text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    font-weight: 600;
-    margin: 0;
-}
-
-#points-container {
-    position: fixed;
-    right: 20px;
-    top: 15px;
-}
-
-#points {
-    font-size: 18px;
-    color: #00aaff;
-    font-weight: bold;
-}
-
-#additional-resources {
-    background-color: #333;
-    color: white;
-    width: 200px;
-    padding: 15px;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    bottom: 0;
-    overflow-y: auto;
-}
-
-#additional-resources h2 {
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-#additional-resources ul {
-    list-style: none;
-    padding: 0;
-}
-
-#additional-resources li {
-    margin-bottom: 10px;
-}
-
-#additional-resources a {
-    color: #00aaff;
-    text-decoration: none;
-}
-
-#additional-resources a:hover {
-    text-decoration: underline;
-}
-
-main {
-    margin-left: 220px;
-    margin-top: 80px;
     padding: 20px;
+    border-bottom: 2px solid #00aaff;
+}
+
+.header h1 {
+    color: #222222;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+.main-content {
+    padding: 40px 20px;
     max-width: 800px;
+    margin: auto;
 }
 
-main h2, main h3, main h4 {
-    color: #222;
+.intro {
+    margin-bottom: 30px;
 }
 
-.short-day-btn, .long-day-btn {
-    display: inline-block;
-    margin: 10px 5px;
-    padding: 10px 15px;
-    border: none;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.short-day-btn {
-    background-color: #00aaff;
-    color: white;
-}
-
-.long-day-btn {
-    background-color: #ff5555;
-    color: white;
-}
-
-#tools {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+.objectives {
+    background-color: #f7f7f7;
     padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
 }
 
-#notepad, #console {
-    background-color: #222;
-    color: white;
-    padding: 15px;
-    width: 48%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-}
-
-#notepad h2, #console h2 {
+.objectives h2 {
+    color: #00aaff;
     font-weight: 600;
     margin-bottom: 15px;
 }
 
-#notepad textarea, #console textarea {
-    width: 100%;
-    height: 150px;
-    background-color: #333;
-    border: 1px solid #444;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    margin-bottom: 15px;
+.objectives ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
-#save-notes, #run-code {
+.objectives li {
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.get-started {
+    text-align: center;
+}
+
+.btn-get-started {
     background-color: #00aaff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+    color: #ffffff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
     border-radius: 5px;
-    width: 100%;
-    font-size: 16px;
+    font-weight: 600;
 }
 
-#save-notes:hover, #run-code:hover {
+.btn-get-started:hover {
     background-color: #0077cc;
 }
 
-pre#output {
-    background-color: #333;
-    color: #00ff00;
+.footer {
+    background-color: #222222;
+    color: #ffffff;
+    text-align: center;
     padding: 15px;
-    border-radius: 5px;
-    height: 100px;
-    overflow-y: auto;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
 }
