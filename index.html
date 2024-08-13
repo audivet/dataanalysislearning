@@ -3,41 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6 Month Data Analysis Learning Plan</title>
+    <title>Aud Learning Hub</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
+    <header>
         <h1>6 Month Data Analysis Learning Plan</h1>
-        <div id="points">Points: 0</div>
+        <div id="points-container">
+            <p id="points">Points: 0</p>
+        </div>
+    </header>
+    
+    <aside id="additional-resources">
+        <h2>Additional Resources</h2>
+        <ul>
+            <li><a href="https://www.codecademy.com/learn" target="_blank">Codecademy</a></li>
+            <li><a href="https://www.khanacademy.org/computing/computer-programming" target="_blank">Khan Academy</a></li>
+            <li><a href="https://www.edx.org/course/data-analysis" target="_blank">edX Data Analysis</a></li>
+            <li><a href="https://www.coursera.org/courses?query=data%20analysis" target="_blank">Coursera Data Analysis</a></li>
+        </ul>
+    </aside>
+
+    <main id="learning-plan"></main>
+
+    <div id="tools">
+        <div id="notepad">
+            <h2>Notepad</h2>
+            <textarea id="notes" placeholder="Write your notes here..."></textarea>
+            <button id="save-notes">Save Notes</button>
+        </div>
+        
+        <div id="console">
+            <h2>Practice Console</h2>
+            <textarea id="code-console" placeholder="Write your code here..."></textarea>
+            <button id="run-code">Run Code</button>
+            <pre id="output"></pre>
+        </div>
     </div>
-    <div class="container">
-        <aside class="sidebar">
-            <h3>Additional Resources</h3>
-            <ul>
-                <li><a href="https://www.codecademy.com/" target="_blank">Codecademy</a></li>
-                <li><a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a></li>
-                <li><a href="https://www.edx.org/course/subject/data-analysis-statistics" target="_blank">edX Data Analysis</a></li>
-                <li><a href="https://www.coursera.org/browse/data-science/data-analysis" target="_blank">Coursera Data Analysis</a></li>
-            </ul>
-        </aside>
-        <main id="learning-plan">
-            <!-- The learning plan content will be dynamically added here by script.js -->
-        </main>
-        <aside class="tools">
-            <div class="notepad">
-                <h3>Notepad</h3>
-                <textarea id="notes" placeholder="Write your notes here..."></textarea>
-                <button id="save-notes">Save Notes</button>
-            </div>
-            <div class="console">
-                <h3>Practice Console</h3>
-                <textarea id="practice-code" placeholder="Write your code here..."></textarea>
-                <button id="run-code">Run Code</button>
-                <pre id="output"></pre>
-            </div>
-        </aside>
-    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
