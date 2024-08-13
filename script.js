@@ -1,5 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const learningPlan = [
+        // Month 1: Python Basics
         {
             month: "Month 1: Python Basics",
             weeks: [
@@ -8,19 +9,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Watch Python basics tutorials",
-                            qrCodeImage: "python-basics.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.youtube.com/watch?v=kqtD5dpn9C8&chs=180x180",
                             link: "https://www.youtube.com/watch?v=kqtD5dpn9C8",
-                            shortDayDetails: "Complete 2 exercises, Watch for 30 minutes",
-                            longDayDetails: "Complete 4 exercises, Watch for 60 minutes",
-                            extraPoints: 10
+                            duration: 3,
+                            details: "Complete 2 exercises, Watch for 30 minutes per day"
                         },
                         {
                             description: "Complete exercises on W3Schools",
-                            qrCodeImage: "w3schools-python-exercises.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.w3schools.com/python/python_exercises.asp&chs=180x180",
                             link: "https://www.w3schools.com/python/python_exercises.asp",
-                            shortDayDetails: "Finish 3 exercises, Spend 30 minutes",
-                            longDayDetails: "Finish 6 exercises, Spend 60 minutes",
-                            extraPoints: 10
+                            duration: 4,
+                            details: "Finish 3 exercises, Spend 30 minutes per day"
                         }
                     ]
                 },
@@ -29,24 +28,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Learn about data structures",
-                            qrCodeImage: "python-data-structures.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://docs.python.org/3/tutorial/datastructures.html&chs=180x180",
                             link: "https://docs.python.org/3/tutorial/datastructures.html",
-                            shortDayDetails: "Complete 1 tutorial, Spend 30 minutes",
-                            longDayDetails: "Complete 2 tutorials, Spend 60 minutes",
-                            extraPoints: 15
+                            duration: 3,
+                            details: "Complete 2 tutorials, Spend 45 minutes"
                         },
                         {
                             description: "Work on small projects",
-                            qrCodeImage: "python-projects.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.pythonforbeginners.com/projects/15-python-projects-beginners/&chs=180x180",
                             link: "https://www.pythonforbeginners.com/projects/15-python-projects-beginners/",
-                            shortDayDetails: "Start 1 project, Spend 30 minutes",
-                            longDayDetails: "Complete 1 project, Spend 60 minutes",
-                            extraPoints: 15
+                            duration: 4,
+                            details: "Finish 1 project per day, Spend 60 minutes"
                         }
                     ]
                 }
             ]
         },
+        // Month 2: Data Analysis with Python
         {
             month: "Month 2: Data Analysis with Python",
             weeks: [
@@ -55,19 +53,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Learn the basics of Pandas",
-                            qrCodeImage: "pandas-basics.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html&chs=180x180",
                             link: "https://pandas.pydata.org/pandas-docs/stable/getting_started/index.html",
-                            shortDayDetails: "Complete 1 lesson, Spend 30 minutes",
-                            longDayDetails: "Complete 2 lessons, Spend 60 minutes",
-                            extraPoints: 20
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
                         },
                         {
                             description: "Complete Pandas exercises",
-                            qrCodeImage: "pandas-exercises.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.w3resource.com/python-exercises/pandas/index.php&chs=180x180",
                             link: "https://www.w3resource.com/python-exercises/pandas/index.php",
-                            shortDayDetails: "Finish 2 exercises, Spend 30 minutes",
-                            longDayDetails: "Finish 4 exercises, Spend 60 minutes",
-                            extraPoints: 20
+                            duration: 4,
+                            details: "Finish 4 exercises, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -76,24 +72,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Practice data cleaning techniques",
-                            qrCodeImage: "kaggle-pandas.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.kaggle.com/learn/pandas&chs=180x180",
                             link: "https://www.kaggle.com/learn/pandas",
-                            shortDayDetails: "Complete 1 lesson, Spend 30 minutes",
-                            longDayDetails: "Complete 2 lessons, Spend 60 minutes",
-                            extraPoints: 25
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
                         },
                         {
                             description: "Work on a data cleaning project",
-                            qrCodeImage: "data-cleaning-project.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.kdnuggets.com/2019/06/data-cleaning-tutorial-python.html&chs=180x180",
                             link: "https://www.kdnuggets.com/2019/06/data-cleaning-tutorial-python.html",
-                            shortDayDetails: "Start project, Spend 30 minutes",
-                            longDayDetails: "Complete project, Spend 60 minutes",
-                            extraPoints: 25
+                            duration: 4,
+                            details: "Finish 1 project, Spend 60 minutes per day"
                         }
                     ]
                 }
             ]
         },
+        // Month 3: Data Visualization
         {
             month: "Month 3: Data Visualization",
             weeks: [
@@ -102,19 +97,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Learn Matplotlib basics",
-                            qrCodeImage: "matplotlib-basics.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://matplotlib.org/stable/users/getting_started/&chs=180x180",
                             link: "https://matplotlib.org/stable/users/getting_started/",
-                            shortDayDetails: "Complete 1 lesson, Spend 30 minutes",
-                            longDayDetails: "Complete 2 lessons, Spend 60 minutes",
-                            extraPoints: 30
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
                         },
                         {
                             description: "Complete Matplotlib exercises",
-                            qrCodeImage: "matplotlib-exercises.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.w3resource.com/python-exercises/matplotlib/index.php&chs=180x180",
                             link: "https://www.w3resource.com/python-exercises/matplotlib/index.php",
-                            shortDayDetails: "Finish 2 exercises, Spend 30 minutes",
-                            longDayDetails: "Finish 4 exercises, Spend 60 minutes",
-                            extraPoints: 30
+                            duration: 4,
+                            details: "Finish 4 exercises, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -123,24 +116,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Learn Seaborn basics",
-                            qrCodeImage: "seaborn-basics.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://seaborn.pydata.org/&chs=180x180",
                             link: "https://seaborn.pydata.org/",
-                            shortDayDetails: "Complete 1 lesson, Spend 30 minutes",
-                            longDayDetails: "Complete 2 lessons, Spend 60 minutes",
-                            extraPoints: 35
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
                         },
                         {
                             description: "Complete Seaborn exercises",
-                            qrCodeImage: "seaborn-exercises.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.kaggle.com/learn/data-visualization&chs=180x180",
                             link: "https://www.kaggle.com/learn/data-visualization",
-                            shortDayDetails: "Finish 2 exercises, Spend 30 minutes",
-                            longDayDetails: "Finish 4 exercises, Spend 60 minutes",
-                            extraPoints: 35
+                            duration: 4,
+                            details: "Finish 4 exercises, Spend 60 minutes per day"
                         }
                     ]
                 }
             ]
         },
+        // Month 4: Advanced SQL
         {
             month: "Month 4: Advanced SQL",
             weeks: [
@@ -149,19 +141,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Learn SQL basics",
-                            qrCodeImage: "sql-basics.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.w3schools.com/sql/&chs=180x180",
                             link: "https://www.w3schools.com/sql/",
-                            shortDayDetails: "Complete 1 lesson, Spend 30 minutes",
-                            longDayDetails: "Complete 2 lessons, Spend 60 minutes",
-                            extraPoints: 40
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
                         },
                         {
                             description: "Complete SQL exercises",
-                            qrCodeImage: "sql-exercises.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.w3schools.com/sql/sql_exercises.asp&chs=180x180",
                             link: "https://www.w3schools.com/sql/sql_exercises.asp",
-                            shortDayDetails: "Finish 2 exercises, Spend 30 minutes",
-                            longDayDetails: "Finish 4 exercises, Spend 60 minutes",
-                            extraPoints: 40
+                            duration: 4,
+                            details: "Finish 4 exercises, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -170,24 +160,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Learn intermediate SQL",
-                            qrCodeImage: "intermediate-sql.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.mode.com/sql-tutorial/&chs=180x180",
                             link: "https://www.mode.com/sql-tutorial/",
-                            shortDayDetails: "Complete 1 lesson, Spend 30 minutes",
-                            longDayDetails: "Complete 2 lessons, Spend 60 minutes",
-                            extraPoints: 45
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
                         },
                         {
                             description: "Complete intermediate SQL exercises",
-                            qrCodeImage: "intermediate-sql-exercises.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.mode.com/sql-tutorial/&chs=180x180",
                             link: "https://www.mode.com/sql-tutorial/",
-                            shortDayDetails: "Finish 2 exercises, Spend 30 minutes",
-                            longDayDetails: "Finish 4 exercises, Spend 60 minutes",
-                            extraPoints: 45
+                            duration: 4,
+                            details: "Finish 4 exercises, Spend 60 minutes per day"
                         }
                     ]
                 }
             ]
         },
+        // Month 5: Machine Learning Introduction
         {
             month: "Month 5: Machine Learning Introduction",
             weeks: [
@@ -196,19 +185,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Watch Andrew Ng's Machine Learning course",
-                            qrCodeImage: "machine-learning-course.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.coursera.org/learn/machine-learning&chs=180x180",
                             link: "https://www.coursera.org/learn/machine-learning",
-                            shortDayDetails: "Watch 1 lesson, Spend 45 minutes",
-                            longDayDetails: "Watch 2 lessons, Spend 90 minutes",
-                            extraPoints: 50
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
                         },
                         {
                             description: "Continue the Machine Learning course",
-                            qrCodeImage: "machine-learning-continue.png",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.coursera.org/learn/machine-learning&chs=180x180",
                             link: "https://www.coursera.org/learn/machine-learning",
-                            shortDayDetails: "Watch 1 lesson, Spend 45 minutes",
-                            longDayDetails: "Watch 2 lessons, Spend 90 minutes",
-                            extraPoints: 50
+                            duration: 4,
+                            details: "Finish 2 exercises, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -217,45 +204,42 @@ document.addEventListener('DOMContentLoaded', function() {
                     tasks: [
                         {
                             description: "Read Scikit-learn documentation",
-                            qrCodeImage: "scikit-learn-docs.png",
-                            link: "https://scikit-learn.org/stable/",
-                            shortDayDetails: "Complete 1 tutorial, Spend 30 minutes",
-                            longDayDetails: "Complete 2 tutorials, Spend 60 minutes",
-                            extraPoints: 55
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://scikit-learn.org/stable/user_guide.html&chs=180x180",
+                            link: "https://scikit-learn.org/stable/user_guide.html",
+                            duration: 3,
+                            details: "Complete 2 tutorials, Spend 45 minutes"
                         },
                         {
-                            description: "Complete small projects using Scikit-learn",
-                            qrCodeImage: "scikit-learn-examples.png",
-                            link: "https://scikit-learn.org/stable/auto_examples/index.html",
-                            shortDayDetails: "Start 1 project, Spend 30 minutes",
-                            longDayDetails: "Complete 1 project, Spend 60 minutes",
-                            extraPoints: 55
+                            description: "Complete Scikit-learn exercises",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.w3schools.com/python/python_ml_getting_started.asp&chs=180x180",
+                            link: "https://www.w3schools.com/python/python_ml_getting_started.asp",
+                            duration: 4,
+                            details: "Finish 4 exercises, Spend 60 minutes per day"
                         }
                     ]
                 }
             ]
         },
+        // Month 6: Advanced Machine Learning & Capstone Project
         {
-            month: "Month 6: Advanced Topics & Capstone Project",
+            month: "Month 6: Advanced Machine Learning & Capstone Project",
             weeks: [
                 {
-                    title: "Week 11: Big Data & Spark",
+                    title: "Week 11: Advanced Machine Learning Techniques",
                     tasks: [
                         {
-                            description: "Learn about Big Data",
-                            qrCodeImage: "big-data.png",
-                            link: "https://spark.apache.org/docs/latest/",
-                            shortDayDetails: "Complete 1 lesson, Spend 30 minutes",
-                            longDayDetails: "Complete 2 lessons, Spend 60 minutes",
-                            extraPoints: 60
+                            description: "Learn about Deep Learning",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.deeplearning.ai/&chs=180x180",
+                            link: "https://www.deeplearning.ai/",
+                            duration: 3,
+                            details: "Complete 2 lessons, Spend 45 minutes"
                         },
                         {
-                            description: "Start a project using Spark",
-                            qrCodeImage: "spark-project.png",
-                            link: "https://spark.apache.org/examples.html",
-                            shortDayDetails: "Start project, Spend 30 minutes",
-                            longDayDetails: "Complete project, Spend 60 minutes",
-                            extraPoints: 60
+                            description: "Implement a Deep Learning project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.kaggle.com/learn/deep-learning&chs=180x180",
+                            link: "https://www.kaggle.com/learn/deep-learning",
+                            duration: 4,
+                            details: "Finish 1 project, Spend 60 minutes per day"
                         }
                     ]
                 },
@@ -263,20 +247,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     title: "Week 12: Capstone Project",
                     tasks: [
                         {
-                            description: "Start the capstone project",
-                            qrCodeImage: "capstone-start.png",
-                            link: "https://www.kaggle.com/competitions",
-                            shortDayDetails: "Plan project, Spend 60 minutes",
-                            longDayDetails: "Start working on project, Spend 120 minutes",
-                            extraPoints: 100
-                        },
-                        {
-                            description: "Continue the capstone project",
-                            qrCodeImage: "capstone-continue.png",
-                            link: "https://www.kaggle.com/competitions",
-                            shortDayDetails: "Continue working on project, Spend 60 minutes",
-                            longDayDetails: "Make significant progress on project, Spend 120 minutes",
-                            extraPoints: 100
+                            description: "Work on your capstone project",
+                            qrCode: "https://chart.googleapis.com/chart?cht=qr&chl=https://www.github.com/&chs=180x180",
+                            link: "https://www.github.com/",
+                            duration: 7,
+                            details: "Complete your capstone project"
                         }
                     ]
                 }
@@ -285,12 +260,8 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     const container = document.getElementById('learning-plan');
+    const today = new Date();
     let iframeContainer;
-    let points = 0;
-
-    function updatePointsDisplay() {
-        document.getElementById('points-display').textContent = `Points: ${points}`;
-    }
 
     learningPlan.forEach(month => {
         const section = document.createElement('div');
@@ -314,14 +285,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 taskDiv.appendChild(taskDescription);
 
                 const taskDetails = document.createElement('p');
-                taskDetails.textContent = `Details: ${task.shortDayDetails}`;
+                taskDetails.textContent = `Details: ${task.details}`;
                 taskDiv.appendChild(taskDetails);
 
                 const qrCodeImg = document.createElement('img');
-                qrCodeImg.src = `./qr-codes/${task.qrCodeImage}`;
-                qrCodeImg.alt = "QR Code Unavailable";
+                qrCodeImg.src = task.qrCode;
+                qrCodeImg.alt = "QR Code";
                 qrCodeImg.onerror = function() {
-                    this.src = './qr-codes/fallback-image.png';
+                    qrCodeImg.src = 'fallback-image.png';
+                    qrCodeImg.alt = "QR Code Unavailable";
                 };
                 taskDiv.appendChild(qrCodeImg);
 
@@ -334,28 +306,89 @@ document.addEventListener('DOMContentLoaded', function() {
                 const calendarDiv = document.createElement('div');
                 calendarDiv.classList.add('calendar');
 
+                for (let i = 0; i < task.duration; i++) {
+                    const taskDate = new Date(today);
+                    taskDate.setDate(today.getDate() + i);
+
+                    const dayDiv = document.createElement('div');
+                    const isWeekend = taskDate.getDay() % 6 === 0;
+                    dayDiv.classList.add('day', isWeekend ? 'weekend' : 'weekday');
+                    dayDiv.dataset.link = task.link;
+
+                    const dayLabel = document.createElement('div');
+                    dayLabel.textContent = taskDate.toDateString();
+                    dayDiv.appendChild(dayLabel);
+
+                    dayDiv.addEventListener('click', function(e) {
+                        if (!e.target.matches('input[type="checkbox"], button')) {
+                            if (!iframeContainer) {
+                                iframeContainer = document.createElement('div');
+                                iframeContainer.classList.add('iframe-container');
+                                container.appendChild(iframeContainer);
+                            }
+                            iframeContainer.innerHTML = `<iframe src="${this.dataset.link}" width="100%" height="600px"></iframe>`;
+                            iframeContainer.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.dataset.date = taskDate.toISOString().slice(0, 10);
+                    checkbox.checked = localStorage.getItem(checkbox.dataset.date) === 'done';
+
+                    checkbox.addEventListener('change', function() {
+                        if (this.checked) {
+                            localStorage.setItem(this.dataset.date, 'done');
+                            dayDiv.classList.add('checked');
+                        } else {
+                            localStorage.removeItem(this.dataset.date);
+                            dayDiv.classList.remove('checked');
+                        }
+                    });
+
+                    if (checkbox.checked) {
+                        dayDiv.classList.add('checked');
+                    }
+
+                    const completeButton = document.createElement('button');
+                    completeButton.textContent = "Complete Day";
+                    completeButton.addEventListener('click', function() {
+                        checkbox.checked = true;
+                        checkbox.dispatchEvent(new Event('change'));
+                        // Increment points
+                        const pointsDisplay = document.getElementById('points');
+                        let points = parseInt(localStorage.getItem('points')) || 0;
+                        points += dayDiv.classList.contains('long-day') ? 10 : 5;
+                        localStorage.setItem('points', points);
+                        pointsDisplay.textContent = `Points: ${points}`;
+                    });
+
+                    dayDiv.appendChild(checkbox);
+                    dayDiv.appendChild(completeButton);
+                    calendarDiv.appendChild(dayDiv);
+                }
+
+                taskDiv.appendChild(calendarDiv);
+
+                // Add day type selection buttons
                 const shortDayButton = document.createElement('button');
                 shortDayButton.textContent = "Short Day";
-                shortDayButton.classList.add('short-day-button');
+                shortDayButton.classList.add('short-day-btn');
                 shortDayButton.addEventListener('click', function() {
-                    taskDetails.textContent = `Details: ${task.shortDayDetails}`;
-                    points += task.extraPoints;
-                    updatePointsDisplay();
+                    dayDiv.classList.remove('long-day');
+                    dayDiv.classList.add('short-day');
                 });
 
                 const longDayButton = document.createElement('button');
                 longDayButton.textContent = "Long Day";
-                longDayButton.classList.add('long-day-button');
+                longDayButton.classList.add('long-day-btn');
                 longDayButton.addEventListener('click', function() {
-                    taskDetails.textContent = `Details: ${task.longDayDetails}`;
-                    points += task.extraPoints * 1.5;
-                    updatePointsDisplay();
+                    dayDiv.classList.remove('short-day');
+                    dayDiv.classList.add('long-day');
                 });
 
                 taskDiv.appendChild(shortDayButton);
                 taskDiv.appendChild(longDayButton);
-
-                taskDiv.appendChild(calendarDiv);
                 section.appendChild(taskDiv);
             });
         });
@@ -363,12 +396,15 @@ document.addEventListener('DOMContentLoaded', function() {
         container.appendChild(section);
     });
 
+    // Initialize points display
+    const pointsDisplay = document.createElement('div');
+    pointsDisplay.id = 'points';
+    pointsDisplay.textContent = `Points: ${localStorage.getItem('points') || 0}`;
+    document.body.insertBefore(pointsDisplay, document.body.firstChild);
+
     // Add a disclaimer regarding ownership of resources
     const disclaimer = document.createElement('p');
     disclaimer.classList.add('disclaimer');
     disclaimer.textContent = "Disclaimer: All external resources are owned by their respective creators. The links provided are for educational purposes, and all content is credited to the original authors or creators.";
     container.appendChild(disclaimer);
-
-    // Initialize points display
-    updatePointsDisplay();
 });
