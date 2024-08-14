@@ -1,3 +1,4 @@
+HEAD
 document.getElementById('toggle-console').addEventListener('click', function() {
     const consoleContainer = document.getElementById('console-container');
     if (consoleContainer.classList.contains('minimized')) {
@@ -45,3 +46,4 @@ window.onload = function() {
         document.getElementById('notepad').value = savedNotes;
     }
 };
+
