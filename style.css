@@ -155,3 +155,72 @@ button {
 button:hover {
     background-color: #005fa3;
 }
+/* Adding a font similar to Adidas */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+/* Headers and Titles */
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    font-weight: 700;
+}
+
+/* Paragraph Text */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Button Styles */
+button {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Link Styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+/* Section Spacing */
+.section {
+    margin-bottom: 40px;
+}
+
+/* Align Text */
+.text-center {
+    text-align: center;
+}
+
+/* Padding for Consistent Spacing */
+.container {
+    padding: 20px;
+}
+
+.objectives,
+.time-expected,
+.interactive-elements {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
