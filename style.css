@@ -1,226 +1,155 @@
+/* General Page Styles */
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #ffffff;
-    color: #333333;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-}
-
-.header {
-    background-color: #f0f0f0;
-    text-align: center;
-    padding: 20px;
-    border-bottom: 2px solid #00aaff;
-}
-
-.header h1 {
-    color: #222222;
-    font-weight: 600;
-    font-size: 2.5rem;
-}
-
-.main-content {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: auto;
-}
-
-.intro {
-    margin-bottom: 30px;
-}
-
-.objectives {
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
-
-.objectives h2 {
-    color: #00aaff;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.objectives ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.objectives li {
-    margin-bottom: 10px;
-    color: #333333;
-}
-
-.get-started {
-    text-align: center;
-}
-
-.btn-get-started {
-    background-color: #00aaff;
-    color: #ffffff;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    font-weight: 600;
-}
-
-.btn-get-started:hover {
-    background-color: #0077cc;
-}
-
-.footer {
-    background-color: #222222;
-    color: #ffffff;
-    text-align: center;
-    padding: 15px;
-    margin-top: 40px;
-}
-
-.footer p {
-    margin: 0;
-    font-size: 0.9rem;
-}
-<<<<<<< HEAD
-
-#tools {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-top: 2px solid #00aaff;
-}
-
-#console-container, #notepad-container {
-    width: 48%;
-    transition: max-height 0.3s ease-in-out;
-    overflow: hidden;
-}
-
-.minimized {
-    max-height: 40px; /* Show just the header */
-}
-
-.expanded {
-    max-height: 300px;
-}
-
-.console-header, .notepad-header {
-    display: flex;
-    justify-content: space-between;
-    background-color: #00aaff;
-    padding: 5px;
-    color: white;
-    cursor: pointer;
-}
-
-textarea {
-    width: 100%;
-    height: 150px;
-    margin-top: 10px;
-    padding: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#output {
-    background-color: #333;
-    color: #00ff00;
-    padding: 10px;
-    margin-top: 10px;
-    height: 100px;
-    overflow-y: auto;
-    font-family: 'Courier New', Courier, monospace;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #0077cc;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #005fa3;
-}
-/* Adding a font similar to Adidas */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-body {
-    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-/* Headers and Titles */
-h1, h2, h3, h4, h5, h6 {
-    color: #000;
-    font-weight: 700;
-}
-
-/* Paragraph Text */
-p {
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-/* Button Styles */
-button {
-    font-family: 'Montserrat', sans-serif;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
+/* Header */
+header {
+    background-color: #333;
     color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Link Styles */
-a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #0056b3;
-}
-/* Section Spacing */
-.section {
-    margin-bottom: 40px;
-}
-
-/* Align Text */
-.text-center {
+    padding: 10px;
     text-align: center;
 }
 
-/* Padding for Consistent Spacing */
-.container {
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Main content area */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
 }
 
-.objectives,
-.time-expected,
-.interactive-elements {
-    margin-bottom: 20px;
+.container {
+    background-color: #fff;
     padding: 20px;
-    border-radius: 10px;
-    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
 }
+
+/* Objectives, Time, Interactive Elements */
+h2 {
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Buttons */
+button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+/* Notepad and Practice Console */
+#notepad-container, #console-container {
+    background-color: #282c34;
+    color: white;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+#notepad, #code-console {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    height: 200px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    resize: vertical;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button.save-notes, button.run-code {
+    background-color: #61dafb;
+    color: #282c34;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+button.save-notes:hover, button.run-code:hover {
+    background-color: #21a1f1;
+}
+
+/* Fixing the Bottom Section */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Ensure clear spacing between sections */
+.section {
+    margin-bottom: 20px;
+}
+
+.practice-console {
+    margin-top: 20px;
+}
+
+/* Additional Resources */
+.additional-resources {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.additional-resources a {
+    color: #0073e6;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+}
+
+.additional-resources a:hover {
+    text-decoration: underline;
+}
+
