@@ -172,50 +172,44 @@ footer p {
     text-decoration: underline;
 }
 
-/* Sidebar styling */
+/* Sidebar styles */
 .sidebar {
     width: 250px;
-    background-color: #2e2e2e;
-    color: #fff;
-    height: 100%;
     position: fixed;
-    left: 0;
     top: 0;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .sidebar-section {
-    margin-bottom: 30px;
-  }
-  
-  .sidebar-section h2 {
-    font-size: 18px;
-    color: #fff;
-    margin-bottom: 10px;
-  }
-  
-  .sidebar-section ul {
+    left: 0;
+    background-color: #333;
+    padding: 15px;
+    height: 100%;
+    color: white;
+}
+
+.sidebar h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
     list-style-type: none;
-    padding-left: 0;
-  }
-  
-  .sidebar-section ul li {
-    margin-bottom: 10px;
-  }
-  
-  .sidebar-section ul li a {
-    color: #1e90ff;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: white;
     text-decoration: none;
-  }
-  
-  .sidebar-section ul li a:hover {
+}
+
+.sidebar ul li a:hover {
     text-decoration: underline;
-  }
-  
-  /* Adjust content margin to make room for the sidebar */
-  .content {
+}
+
+/* Main content area */
+.content {
     margin-left: 270px;
     padding: 20px;
-  }
-  
+}
+

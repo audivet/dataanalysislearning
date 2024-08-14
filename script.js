@@ -47,3 +47,12 @@ window.onload = function() {
     }
 };
 
+document.getElementById('toggle-console').addEventListener('click', function() {
+    const consoleContainer = document.getElementById('console-container');
+    consoleContainer.classList.toggle('minimized');
+});
+
+document.getElementById('toggle-notepad').addEventListener('click', function() {
+    const notepadContainer = document.getElementById('notepad-container');
+    notepadContainer.classList.toggle('minimized');
+});
