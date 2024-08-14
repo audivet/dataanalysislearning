@@ -1,11 +1,37 @@
 /* General Page Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
     overflow-x: hidden;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #c9c9c9;
+}
+
+header.dark-mode, footer.dark-mode, .sidebar.dark-mode {
+    background-color: #333;
+    color: #c9c9c9;
+}
+
+button.dark-mode {
+    background-color: #0073e6;
+    color: white;
+}
+
+button.dark-mode:hover {
+    background-color: #005bb5;
+}
+
+#notepad.dark-mode, #code-console.dark-mode {
+    background-color: #2d2d2d;
+    color: #c9c9c9;
+    border: 1px solid #555;
 }
 
 /* Header */
@@ -182,57 +208,6 @@ footer p {
     padding: 15px;
     height: 100%;
     color: white;
-}
-
-.sidebar h2 {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin: 10px 0;
-}
-
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-.sidebar ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Main content area */
-.content {
-    margin-left: 270px;
-    padding: 20px;
-}
-
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    overflow-x: hidden;
-}
-
-/* Sidebar Styles */
-.sidebar {
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #333;
-    padding: 15px;
-    height: 100%;
-    color: white;
     transition: transform 0.3s ease;
 }
 
@@ -257,6 +232,31 @@ body {
 
 .sidebar ul li a:hover {
     text-decoration: underline;
+}
+
+/* Sidebar Toggle Indicator */
+.sidebar .toggle-indicator {
+    position: absolute;
+    top: 15px;
+    right: -35px;
+    width: 30px;
+    height: 30px;
+    background-color: #0073e6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sidebar .toggle-indicator:before {
+    content: '\25C0'; /* Left arrow */
+    color: white;
+    font-size: 16px;
+}
+
+.sidebar.open .toggle-indicator:before {
+    content: '\25B6'; /* Right arrow */
 }
 
 /* Hamburger Menu Styles */
@@ -302,4 +302,21 @@ body {
         margin-left: 0;
         padding-top: 60px;
     }
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0073e6;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.dark-mode-toggle.dark-mode {
+    background-color: #005bb5;
 }
