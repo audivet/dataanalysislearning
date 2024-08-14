@@ -1,6 +1,9 @@
 // Toggle Sidebar on Hamburger Menu Click
 document.querySelector('.hamburger-menu').addEventListener('click', function() {
-    document.querySelector('.sidebar').classList.toggle('open');
+    const sidebar = document.querySelector('.sidebar');
+    const content = document.querySelector('.content');
+    sidebar.classList.toggle('hidden');
+    content.classList.toggle('full-width');
 });
 
 // Sidebar Toggle Indicator Click
