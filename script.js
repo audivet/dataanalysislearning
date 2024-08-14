@@ -56,3 +56,7 @@ document.getElementById('toggle-notepad').addEventListener('click', function() {
     const notepadContainer = document.getElementById('notepad-container');
     notepadContainer.classList.toggle('minimized');
 });
+// Toggle Sidebar on Hamburger Menu Click
+document.querySelector('.hamburger-menu').addEventListener('click', function() {
+    document.querySelector('.sidebar').classList.toggle('open');
+});

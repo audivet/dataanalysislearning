@@ -213,3 +213,93 @@ footer p {
     padding: 20px;
 }
 
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    padding: 15px;
+    height: 100%;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.sidebar h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin: 5px;
+    background-color: #333;
+}
+
+/* Content Area */
+.content {
+    margin-left: 270px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .content {
+        margin-left: 0;
+        padding-top: 60px;
+    }
+}
